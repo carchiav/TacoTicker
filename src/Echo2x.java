@@ -7,6 +7,6 @@ public class Echo2x {
         System.out.println(stuff);
         System.out.println(stuff);
         System.out.println(stuff);
-        System.out.println("TEsT");
+        System.out.println("TEkT");
     }
 }
