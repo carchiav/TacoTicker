@@ -6,5 +6,7 @@ public class Echo2x {
         String stuff = input.nextLine();
         System.out.println(stuff);
         System.out.println(stuff);
+        System.out.println(stuff);
+        System.out.println("TEsT");
     }
 }
