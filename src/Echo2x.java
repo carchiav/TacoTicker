@@ -5,7 +5,7 @@ public class Echo2x {
         System.out.println("Input some text:");
         String stuff = input.nextLine();
         System.out.println(stuff);
-        System.out.println(suff);
+        System.out.println(stuff);
 	  System.out.println("teft");
     }
 }
