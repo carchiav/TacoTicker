@@ -5,21 +5,25 @@ public class Player {
     int TPS;
 
     int[] producerCounts;
-    Arraylist<Producer> producers;
+    ArrayList<Producer> producers;
     int[] upgrades;
 
     public Player(){
         public void loadGame();
     }
     public void calcTPS(){
-
+        int temp = 0;
+        for (Producer i : producers){
+            temp += i.getTPS();
+        }
+        TPS = temp;
     }
-    public void calcTPSLoop(){
-        long start = System.currentTimeMillis();
+    public void calcTPSLoop() throws InterruptedException {
         int i = 0;
         do{
-
-        }while(i!=1)
+            calcTPS();
+            Thread.sleep(1000);
+        }while(i!=1);
 
     }
     public void removeTacos(int i){
@@ -37,6 +41,7 @@ public class Player {
         TPS = 0;
         producerCounts = new int[7];
         upgrades = new int[9];
+        producers = new ArrayList<Producer>();
     }
 
 }
