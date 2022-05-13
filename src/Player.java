@@ -22,7 +22,6 @@ public class Player {
         for (Producer i : producers){
             temp += i.getTPS();
         }
-        temp = 5;
         TPS = temp;
         System.out.println(temp);
     }
