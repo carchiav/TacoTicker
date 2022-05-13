@@ -6,34 +6,33 @@ import java.io.IOException;
 import java.io.FileWriter;
 
 public class Player {
-    int tacoCount;
-    int tacosPerTick;
-    int TPS;
+    private int tacoCount;
+    private int tacosPerTick;
+    private int TPS;
 
-    int[] producerCounts;
-    ArrayList<Producer> producers;
-    int[] upgrades;
+    private int[] producerCounts;
+    private ArrayList<Producer> producers;
+    private int[] producerCosts;
+    private int[] upgrades;
+
 
     public Player(){
-        loadGame();
+
     }
     public void calcTPS(){
         int temp = 0;
-        for (Producer i : producers){
+        /*for (Producer i : producers){
             temp += i.getTPS();
-        }
+        }*/
         temp = 5;
         TPS = temp;
         System.out.println(temp);
     }
-    public void calcTPSLoop() throws InterruptedException {
-        int i = 0;
-        do{
-            calcTPS();
-            Thread.sleep(1000);
-        }while(i!=1);
-
+    public int getTPS(){
+        return TPS;
     }
+
+
     public void removeTacos(int i){
         tacoCount -= i;
     }
@@ -44,7 +43,7 @@ public class Player {
         File saveFile = new File("SaveData.txt");
         try {
             FileWriter writer = new FileWriter("SaveData.txt");
-            writer.write(tacoCount + "|" + tacosPerTick + "|" + TPS + "|" + producerCounts+"|" + upgrades);
+            writer.write(tacoCount + "|" + tacosPerTick + "|" + TPS + "|" + producerCounts.toString()+"|" + upgrades.toString());
             writer.close();
         } catch (IOException e) {
             System.out.println("error");
