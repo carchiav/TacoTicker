@@ -1,4 +1,5 @@
 # Taco Ticker!!!!!
+What's Cookie Clicker?
 The point of the game is to accumulate as many tacos as possible via exponential growth. Ticking the big taco image on the canvas once gives 1 taco. The player can spend the tacos they have earned to buy producers and upgrades that increase the automatic TPS (Tacos per Second). Producers are sources of additional tacos, while upgrades scale up the TPS of existing producers. Upgrades can only be bought once. Producers can be bought multiple times, but each time the cost scales up by 20%. 
 
 A saving function will be implemented which writes the data to a text file and pulls it into the player variables when the game starts. A count of total tacos, along with current Tacos Per Second will be shown. There will be menus flanking the taco to allow the purchase of upgrades and producers.
