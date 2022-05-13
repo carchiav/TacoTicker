@@ -1,17 +1,12 @@
+import java.util.Timer;
 public class TacoTickerDriver {
     public static void main(String[] args){
         Player Player1 = new Player();
+        Player1.saveGame();
         gameLoop(Player1);
     }
     public static void gameLoop(Player p){
-        java.util.TimerTask gameTask = new java.util.TimerTask()
-        {
-            @Override
-            public void run() {
-                p.calcTPS();
-                System.out.println(p.getTPS());
-            }
-        };
-        new java.util.Timer().schedule(gameTask,5000);
+         gameTimer gameTask = new gameTimer(p);
+         new Timer().schedule(gameTask,0,100);
     }
 }
