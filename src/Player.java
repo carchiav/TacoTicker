@@ -9,7 +9,7 @@ import java.io.FileWriter;
 public class Player {
     private int tacoCount;
     private int tacosPerTick;
-    private int TPS;
+
 
     private int[] producerCounts;
     private ArrayList<Producer> producers;
@@ -23,17 +23,13 @@ public class Player {
         upgrades = new boolean[]{true, false, true, true,false,true,false};
         producerCosts = new int[]{20,120,800,5000,2500,200000,1000000};
     }
-    public void calcTPS(){
+    public int calcTPS(){
         int temp = 0;
         /*for (Producer i : producers){
             temp += i.getTPS();
         }*/
         temp = 5;
-        TPS = temp;
-        System.out.println(temp);
-    }
-    public int getTPS(){
-        return TPS;
+        return temp;
     }
 
 
@@ -43,11 +39,12 @@ public class Player {
     public void addTacos(int i){
         tacoCount += i;
     }
+    public int getTacoCount(){return tacoCount;}
     public void saveGame() {
         File saveFile = new File("SaveData.txt");
         try {
             FileWriter writer = new FileWriter("SaveData.txt");
-            writer.write(tacoCount + "|" + tacosPerTick + "|" + TPS + "|" + Arrays.toString(producerCounts) +"|" + Arrays.toString(upgrades));
+            writer.write(tacoCount + "|" + tacosPerTick + "|" + Arrays.toString(producerCounts) +"|" + Arrays.toString(upgrades)+"|");
             writer.close();
         } catch (IOException e) {
             System.out.println("error");
@@ -65,28 +62,48 @@ public class Player {
             for (int i = 0; i < curr.length(); i++) {
                 if (curr.charAt(i) == '|') {
                     nextMarker = i;
-                    if (counter == 1)
-                        tacoCount = Integer.parseInt(curr.substring(0, nextMarker));
-                    else if (counter == 2)
-                        tacosPerTick = Integer.parseInt(curr.substring(currMarker, nextMarker));
-                    else if (counter == 3)
-                        TPS = Integer.parseInt(curr.substring(currMarker, nextMarker));
-                    /*else if (counter == 4)
-                        String prodTemp = Integer.parseInt(curr.substring(0, nextMarker));
-                    else if (counter == 5)
-                        String upTemp = curr.substring(0, nextMarker);*/
+                    if (counter == 1) tacoCount = Integer.parseInt(curr.substring(currMarker, nextMarker));
+                    else if (counter == 2) tacosPerTick = Integer.parseInt(curr.substring(currMarker, nextMarker));
+                    else if (counter == 3) {
+                        int counter2 = 0;
+                        int currComma = 1;
+                        int nextComma = 1;
+                        String prodTemp = curr.substring(currMarker, nextMarker);
+                        for (int j = 0; j < prodTemp.length()-1; j++) {
+                            if (prodTemp.charAt(j) == ',') {
+                                nextComma = j;
+                                producerCounts[counter2] = Integer.parseInt(prodTemp.substring(currComma, nextComma).replaceAll("\\s", ""));
+                                counter2++;
+                                currComma = nextComma+1;
+                            }
+                        }
+                        producerCounts[6] = Integer.parseInt(prodTemp.substring(currComma, prodTemp.length()-1).replaceAll("\\s", ""));
+                        for (int u : producerCounts){System.out.println(u);}
+                    }
+                    else if (counter == 4) {
+                        int counter2 = 0;
+                        int currComma = 1;
+                        int nextComma = 1;
+                        String upTemp = curr.substring(currMarker, nextMarker);
+                        for (int j = 0; j < upTemp.length()-1; j++) {
+                            if (upTemp.charAt(j) == ',') {
+                                nextComma = j;
+                                upgrades[counter2] = Boolean.parseBoolean(upTemp.substring(currComma, nextComma).replaceAll("\\s", ""));
+                                counter2++;
+                                currComma = nextComma+1;
+                            }
+                        }
+                        upgrades[6] = Boolean.parseBoolean(upTemp.substring(currComma, upTemp.length() - 1).replaceAll("\\s", ""));
+                        for (boolean u : upgrades){System.out.println(u);}
+                    }
                     currMarker = nextMarker+1;
                     counter++;
                 }
-
-
-
             }
         }
         catch(FileNotFoundException e){
             tacoCount = 0;
             tacosPerTick = 1;
-            TPS = 0;
             producerCounts = new int[7];
             upgrades = new boolean[9];
             producers = new ArrayList<Producer>();

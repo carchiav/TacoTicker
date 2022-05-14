@@ -10,7 +10,7 @@ public class gameTimer extends TimerTask {
     public void run() {
 
         p.calcTPS();
-        System.out.println(p.getTPS());
+        System.out.println(p.calcTPS());
         //Graphics.updateDisplay();
     }
 }
