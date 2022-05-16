@@ -1,6 +1,8 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.awt.image.*;
@@ -23,11 +25,18 @@ public class Frame extends JFrame{
 
         s = new Panel(w, h);
         add(s);
+
+
         Icon taco = new ImageIcon("Tacoimage.jpg");
         JButton tacoClicker = new JButton(taco);
+        tacoClicker.addActionListener(e -> actiontest());
+        tacoClicker.setActionCommand("yes");
         tacoClicker.setPreferredSize(new Dimension(100, 100));
         s.add(tacoClicker);
         setVisible(true);
+    }
+    public void actiontest(){
+        System.out.println("Working");
     }
     public static void main(String[] args){
 
