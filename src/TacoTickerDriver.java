@@ -1,13 +1,13 @@
 import java.util.Timer;
 public class TacoTickerDriver {
     public static void main(String[] args){
-        Player Player1 = new Player();
-        Player1.loadGame();
-        //System.out.println(Player1.getTacoCount());
-        //gameLoop(Player1);
+        Player player1 = new Player();
+        player1.loadGame();
+        //System.out.println(player1.getTacoCount());
+        //gameLoop(player1);
     }
     public static void gameLoop(Player p){
          gameTimer gameTask = new gameTimer(p);
-         new Timer().schedule(gameTask,0,100);
+         new Timer().schedule(gameTask,0,30);
     }
 }

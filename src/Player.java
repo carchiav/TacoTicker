@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.FileWriter;
 
 public class Player {
-    private int tacoCount;
+    private long tacoCount;
     private int tacosPerTick;
 
 
@@ -39,7 +39,7 @@ public class Player {
     public void addTacos(int i){
         tacoCount += i;
     }
-    public int getTacoCount(){return tacoCount;}
+    public Long getTacoCount(){return tacoCount;}
     public void saveGame() {
         File saveFile = new File("SaveData.txt");
         try {
@@ -62,7 +62,7 @@ public class Player {
             for (int i = 0; i < curr.length(); i++) {
                 if (curr.charAt(i) == '|') {
                     nextMarker = i;
-                    if (counter == 1) tacoCount = Integer.parseInt(curr.substring(currMarker, nextMarker));
+                    if (counter == 1) tacoCount = Long.parseLong(curr.substring(currMarker, nextMarker));
                     else if (counter == 2) tacosPerTick = Integer.parseInt(curr.substring(currMarker, nextMarker));
                     else if (counter == 3) {
                         int counter2 = 0;
@@ -78,7 +78,7 @@ public class Player {
                             }
                         }
                         producerCounts[6] = Integer.parseInt(prodTemp.substring(currComma, prodTemp.length()-1).replaceAll("\\s", ""));
-                        for (int u : producerCounts){System.out.println(u);}
+
                     }
                     else if (counter == 4) {
                         int counter2 = 0;
@@ -94,7 +94,7 @@ public class Player {
                             }
                         }
                         upgrades[6] = Boolean.parseBoolean(upTemp.substring(currComma, upTemp.length() - 1).replaceAll("\\s", ""));
-                        for (boolean u : upgrades){System.out.println(u);}
+
                     }
                     currMarker = nextMarker+1;
                     counter++;
@@ -107,6 +107,7 @@ public class Player {
             producerCounts = new int[7];
             upgrades = new boolean[9];
             producers = new ArrayList<Producer>();
+
         }
     }
 
