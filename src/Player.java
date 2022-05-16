@@ -7,49 +7,196 @@ import java.io.IOException;
 import java.io.FileWriter;
 
 public class Player {
+
     private long tacoCount;
-    private int tacosPerTick;
-
-
-    private int[] producerCounts;
     private ArrayList<Producer> producers;
+    private int[] producerCounts;
     private int[] producerCosts;
     private boolean[] upgrades;
 
-
-    public Player(){
-        //loadGame();
-        producerCounts = new int[]{1, 1, 1, 1, 1, 1, 1};
-        upgrades = new boolean[]{true, false, true, true,false,true,false};
-        producerCosts = new int[]{20,120,800,5000,2500,200000,1000000};
-    }
-    public int calcTPS(){
-        int temp = 0;
-        /*for (Producer i : producers){
-            temp += i.getTPS();
-        }*/
-        temp = 5;
-        return temp;
+    public Player() {                                                                             //constructor
+        tacoCount = 0;
+        producers = new ArrayList<Producer>();
+        producerCounts = new int[] {0, 0, 0, 0, 0, 0, 0};
+        producerCosts = new int[] {20, 120, 800, 5000, 25000, 200000, 1000000};
+        upgrades = new boolean[] {false, false, false, false, false, false, false, false, false};
     }
 
-
-    public void removeTacos(int i){
-        tacoCount -= i;
+    public long getTacoCount() {
+        return tacoCount;
+    }                   //getters
+    public int getCost(int i) {
+        return producerCosts[i];
     }
-    public void addTacos(int i){
+    public int getProducerAmount(int i)  {
+        return producerCounts[i];
+    }
+    public boolean getUpgrade(int i) {
+        return upgrades[i];
+    }
+    public int getTacosPerTick() {
+        if (upgrades[8])
+            return (int)(calcTPS()*0.05);
+        else
+            return 1;
+    }
+
+    public void printProducerCounts() {
+        System.out.println("");
+        for (int i : producerCounts)
+            System.out.print(i + ", ");
+    }                   //methods for testing
+    public void iterateTPS() {
+        addTacos(calcTPS());
+    }
+    public void printPlayerInfo() {
+
+        System.out.println(  "Taco Count: " + getTacoCount() + "\n" +
+                "Tacos Per Second: " + calcTPS() +
+                "Tacos Per Tick : " + getTacosPerTick() +
+                "\n\nBuildings: " +
+                "\nStreet Stands/Cost: " + getProducerAmount(0) + " " + getCost(0) +
+                "\nTaco Shops/Cost: " + getProducerAmount(1) + " " + getCost(1) +
+                "\nRestaurants/Cost: " + getProducerAmount(2) + " " + getCost(2) +
+                "\nFactories/Cost: " + getProducerAmount(3) + " " + getCost(3) +
+                "\nConglomerates/Cost: " + getProducerAmount(4) + " " + getCost(4) +
+                "\nTaco Towns/Cost: " + getProducerAmount(5) + " " + getCost(5) +
+                "\nPlanet Tacos/Cost: " + getProducerAmount(6) + " " + getCost(6) +
+                "\n\nUpgrade: Megaphone = " + getUpgrade(0) +
+                "\nUpgrade: Tortilla Press = " + getUpgrade(1) +
+                "\nUpgrade: Hot Sauce = " + getUpgrade(2) +
+                "\nUpgrade: Assembly Line = " + getUpgrade(3) +
+                "\nUpgrade: Boardroom = " + getUpgrade(4) +
+                "\nUpgrade: Constitution = " + getUpgrade(5) +
+                "\nUpgrade: Lettuce Land = " + getUpgrade(6) +
+                "\nUpgrade: Bell = " + getUpgrade(7) +
+                "\nUpgrade: Taco Making Gloves = " + getUpgrade(8) );
+    }
+
+
+    public boolean buy(Producer p) {
+        if (tacoCount < p.getCost())
+            return false;
+        else {
+            tacoCount -= p.getCost();
+            producers.add(p);
+            producerCounts[p.producerIndex()]++;
+            producerCosts[p.producerIndex()] = (int)(p.getCost()*1.2);
+            return true;
+        }
+    }          //actually useful methods
+    public int calcTPS() {
+        int total = 0;
+        for (Producer p : producers) {
+            if (upgrades[p.producerIndex()])
+                total += 2 * p.getTPS();
+            else
+                total += p.getTPS();
+        }
+        if (upgrades[7])
+            total = 2 * total;
+        return total;
+    }
+    public void addTacos(int i) {
         tacoCount += i;
     }
-    public Long getTacoCount(){return tacoCount;}
+
+    public boolean buyMegaphone() {
+        if (tacoCount < 200)
+            return false;
+        else {
+            tacoCount -= 200;
+            upgrades[0] = true;
+            return true;
+        }
+    }          //upgrade buy methods
+    public boolean buyTortillaPress() {
+        if (tacoCount < 1000)
+            return false;
+        else {
+            tacoCount -= 1000;
+            upgrades[1] = true;
+            return true;
+        }
+    }
+    public boolean buyHotSauce() {
+        if (tacoCount < 10000)
+            return false;
+        else {
+            tacoCount -= 10000;
+            upgrades[2] = true;
+            return true;
+        }
+    }
+    public boolean buyAssemblyLine() {
+        if (tacoCount < 75000)
+            return false;
+        else {
+            tacoCount -= 75000;
+            upgrades[3] = true;
+            return true;
+        }
+    }
+    public boolean buyBoardroom() {
+        if (tacoCount < 500000)
+            return false;
+        else {
+            tacoCount -= 500000;
+            upgrades[4] = true;
+            return true;
+        }
+    }
+    public boolean buyConstitution() {
+        if (tacoCount < 10000000)
+            return false;
+        else {
+            tacoCount -= 10000000;
+            upgrades[5] = true;
+            return true;
+        }
+    }
+    public boolean buyLettuceLand() {
+        if (tacoCount < 200000000)
+            return false;
+        else {
+            tacoCount -= 200000000;
+            upgrades[6] = true;
+            return true;
+        }
+    }
+    public boolean buyBell() {
+        int bellCost = 10000 + 600*calcTPS();
+        if (tacoCount < bellCost)
+            return false;
+        else {
+            tacoCount -= bellCost;
+            upgrades[7] = true;
+            return true;
+        }
+    }
+    public boolean buyTacoMakingGloves() {
+        int glovesCost = 1000 + 300*calcTPS();
+        if (tacoCount < glovesCost)
+            return false;
+        else {
+            tacoCount -= glovesCost;
+            upgrades[8] = true;
+            return true;
+        }
+    }
+
+
+
     public void saveGame() {
         File saveFile = new File("SaveData.txt");
         try {
             FileWriter writer = new FileWriter("SaveData.txt");
-            writer.write(tacoCount + "|" + tacosPerTick + "|" + Arrays.toString(producerCounts) +"|" + Arrays.toString(upgrades)+"|");
+            writer.write(tacoCount + "|" + "|" + Arrays.toString(producerCounts) +"|" + Arrays.toString(upgrades)+"|");
             writer.close();
         } catch (IOException e) {
             System.out.println("error");
         }
-    }
+    }  //dont touch these
     public void loadGame(){
         try {
             File save = new File("saveData.txt");
@@ -63,8 +210,7 @@ public class Player {
                 if (curr.charAt(i) == '|') {
                     nextMarker = i;
                     if (counter == 1) tacoCount = Long.parseLong(curr.substring(currMarker, nextMarker));
-                    else if (counter == 2) tacosPerTick = Integer.parseInt(curr.substring(currMarker, nextMarker));
-                    else if (counter == 3) {
+                    else if (counter == 2) {
                         int counter2 = 0;
                         int currComma = 1;
                         int nextComma = 1;
@@ -80,7 +226,7 @@ public class Player {
                         producerCounts[6] = Integer.parseInt(prodTemp.substring(currComma, prodTemp.length()-1).replaceAll("\\s", ""));
 
                     }
-                    else if (counter == 4) {
+                    else if (counter == 3) {
                         int counter2 = 0;
                         int currComma = 1;
                         int nextComma = 1;
@@ -103,7 +249,6 @@ public class Player {
         }
         catch(FileNotFoundException e){
             tacoCount = 0;
-            tacosPerTick = 1;
             producerCounts = new int[7];
             upgrades = new boolean[9];
             producers = new ArrayList<Producer>();
