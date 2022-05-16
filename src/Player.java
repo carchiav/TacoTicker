@@ -8,8 +8,6 @@ import java.io.FileWriter;
 
 public class Player {
     private long tacoCount;
-    private int tacosPerTick;
-
 
     private int[] producerCounts;
     private ArrayList<Producer> producers;
@@ -44,7 +42,7 @@ public class Player {
         File saveFile = new File("SaveData.txt");
         try {
             FileWriter writer = new FileWriter("SaveData.txt");
-            writer.write(tacoCount + "|" + tacosPerTick + "|" + Arrays.toString(producerCounts) +"|" + Arrays.toString(upgrades)+"|");
+            writer.write(tacoCount + "|" + getTacoPerTick() + "|" + Arrays.toString(producerCounts) +"|" + Arrays.toString(upgrades)+"|");
             writer.close();
         } catch (IOException e) {
             System.out.println("error");
