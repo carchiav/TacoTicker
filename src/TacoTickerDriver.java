@@ -7,7 +7,8 @@ public class TacoTickerDriver {
         //gameLoop(player1);
     }
     public static void gameLoop(Player p){
-         gameTimer gameTask = new gameTimer(p);
+         screenUpdateTimer gameTask = new screenUpdateTimer(p);
          new Timer().schedule(gameTask,0,30);
+        }
     }
 }
