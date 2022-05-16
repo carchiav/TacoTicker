@@ -9,14 +9,14 @@ import java.io.FileWriter;
 public class Player {
 
     private long tacoCount;
-    private ArrayList<Producer> Producers;
+    private ArrayList<Producer> producers;
     private int[] producerCounts;
     private int[] producerCosts;
     private boolean[] upgrades;
 
     public Player() {                                                                             //constructor
         tacoCount = 0;
-        Producers = new ArrayList<Producer>();
+        producers = new ArrayList<Producer>();
         producerCounts = new int[] {0, 0, 0, 0, 0, 0, 0};
         producerCosts = new int[] {20, 120, 800, 5000, 25000, 200000, 1000000};
         upgrades = new boolean[] {false, false, false, false, false, false, false, false, false};
@@ -79,7 +79,7 @@ public class Player {
             return false;
         else {
             tacoCount -= p.getCost();
-            Producers.add(p);
+            producers.add(p);
             producerCounts[p.producerIndex()]++;
             producerCosts[p.producerIndex()] = (int)(p.getCost()*1.2);
             return true;
@@ -87,7 +87,7 @@ public class Player {
     }          //actually useful methods
     public int calcTPS() {
         int total = 0;
-        for (Producer p : Producers) {
+        for (Producer p : producers) {
             if (upgrades[p.producerIndex()])
                 total += 2 * p.getTPS();
             else
@@ -191,7 +191,7 @@ public class Player {
         File saveFile = new File("SaveData.txt");
         try {
             FileWriter writer = new FileWriter("SaveData.txt");
-            writer.write(tacoCount + "|" + tacosPerTick + "|" + Arrays.toString(producerCounts) +"|" + Arrays.toString(upgrades)+"|");
+            writer.write(tacoCount + "|" + "|" + Arrays.toString(producerCounts) +"|" + Arrays.toString(upgrades)+"|");
             writer.close();
         } catch (IOException e) {
             System.out.println("error");
@@ -210,8 +210,7 @@ public class Player {
                 if (curr.charAt(i) == '|') {
                     nextMarker = i;
                     if (counter == 1) tacoCount = Long.parseLong(curr.substring(currMarker, nextMarker));
-                    else if (counter == 2) tacosPerTick = Integer.parseInt(curr.substring(currMarker, nextMarker));
-                    else if (counter == 3) {
+                    else if (counter == 2) {
                         int counter2 = 0;
                         int currComma = 1;
                         int nextComma = 1;
@@ -227,7 +226,7 @@ public class Player {
                         producerCounts[6] = Integer.parseInt(prodTemp.substring(currComma, prodTemp.length()-1).replaceAll("\\s", ""));
 
                     }
-                    else if (counter == 4) {
+                    else if (counter == 3) {
                         int counter2 = 0;
                         int currComma = 1;
                         int nextComma = 1;
@@ -250,7 +249,6 @@ public class Player {
         }
         catch(FileNotFoundException e){
             tacoCount = 0;
-            tacosPerTick = 1;
             producerCounts = new int[7];
             upgrades = new boolean[9];
             producers = new ArrayList<Producer>();
