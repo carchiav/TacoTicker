@@ -5,10 +5,14 @@ import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
 
-public class Screen extends JPanel{
+public class Panel extends JPanel{
     private final BufferedImage image;
+    private int width;
+    private int height;
 
-    public Screen(){
+    public Panel(int w, int h){
+        width = w;
+        height = h;
         try {
             image = ImageIO.read(new File("Tacoimage.jpg"));
         } catch (IOException e) {
@@ -17,6 +21,6 @@ public class Screen extends JPanel{
         repaint();
     }
     public void paint(Graphics g){
-        g.drawImage(image, 0, 0, 200, 200, null);
+       // g.drawImage(image, (width/2)-100, (height/2)-100, 200, 200, null);
     }
 }
