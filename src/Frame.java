@@ -27,6 +27,8 @@ public class Frame extends JFrame{
         add(s);
 
         s.setLayout(null);
+        setVisible(true);
+
 
         Icon taco = new ImageIcon("Tacoimage.jpg");
         JButton tacoClicker = new JButton(taco);
@@ -34,41 +36,44 @@ public class Frame extends JFrame{
         tacoClicker.setActionCommand("yes");
         tacoClicker.setPreferredSize(new Dimension(100, 100));
         s.add(tacoClicker);
+        tacoClicker.setVisible(true);
 
         Buttons StreetStand = new Buttons("Street Stand", 300, 400);
         s.add(StreetStand);
-        StreetStand.setLocation(getX(), getY());
-        setVisible(true);
+        StreetStand.setLocation(StreetStand.getX(), StreetStand.getY());
+        StreetStand.setVisible(true);
+        System.out.println("Street Stand");
 
         Buttons TacoShop = new Buttons("Taco Shop", 400, 400);
         s.add(TacoShop);
         TacoShop.setLocation(getX(), getY());
-        setVisible(true);
+        TacoShop.setVisible(true);
 
         Buttons Restaurant = new Buttons("Restaurant", 500, 400);
         s.add(Restaurant);
         Restaurant.setLocation(getX(), getY());
-        setVisible(true);
+        Restaurant.setVisible(true);
 
         Buttons Factory = new Buttons("Factory", 600, 400);
         s.add(Factory);
         Factory.setLocation(getX(), getY());
-        setVisible(true);
+        Factory.setVisible(true);
 
         Buttons Conglomerate = new Buttons("Conglomerate", 700, 400);
         s.add(Conglomerate);
         Conglomerate.setLocation(getX(), getY());
-        setVisible(true);
+        Conglomerate.setVisible(true);
 
         Buttons TacoTown = new Buttons("Taco Town", 800, 400);
         s.add(TacoTown);
         TacoTown.setLocation(getX(), getY());
-        setVisible(true);
+        TacoTown.setVisible(true);
 
         Buttons PlanetTaco = new Buttons("Planet Taco", 300, 700);
         s.add(PlanetTaco);
         PlanetTaco.setLocation(getX(), getY());
-        setVisible(true);
+        PlanetTaco.setVisible(true);
+
     }
     public void actiontest(){
         System.out.println("Working");
