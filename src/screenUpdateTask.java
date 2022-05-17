@@ -1,15 +1,14 @@
-/*
+
 import java.util.TimerTask;
 
 public class screenUpdateTask extends TimerTask {
-    Panel panel1;
-    screenUpdateTask(Panel panel){
+    Frame myFrame;
+    public screenUpdateTask(Frame myFrame){
         super();
-        //panel1 = panel;
+        this.myFrame = myFrame;
     }
     @Override
     public void run() {
-        //panel1.update();
+        myFrame.tacoCountUpdate(5);
     }
 }
-*/
