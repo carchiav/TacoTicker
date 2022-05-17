@@ -6,9 +6,9 @@ public class TacoTickerDriver {
         //System.out.println(player1.getTacoCount());
         //gameLoop(player1);
     }
-    public static void gameLoop(Player p){
-         screenUpdateTimer gameTask = new screenUpdateTimer(p);
-         new Timer().schedule(gameTask,0,30);
+//    public static void gameLoop(Player p){
+      //   screenUpdateTimer gameTask = new screenUpdateTimer(p);
+//         new Timer().schedule(gameTask,0,30);
         }
-    }
-}
+   // }
+//}

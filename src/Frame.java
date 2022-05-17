@@ -35,9 +35,39 @@ public class Frame extends JFrame{
         tacoClicker.setPreferredSize(new Dimension(100, 100));
         s.add(tacoClicker);
 
-        Buttons TacoStand = new Buttons("Taco Stand", 300, 400);
-        s.add(TacoStand);
-        TacoStand.setLocation(getX(), getY());
+        Buttons StreetStand = new Buttons("Street Stand", 300, 400);
+        s.add(StreetStand);
+        StreetStand.setLocation(getX(), getY());
+        setVisible(true);
+
+        Buttons TacoShop = new Buttons("Taco Shop", 400, 400);
+        s.add(TacoShop);
+        TacoShop.setLocation(getX(), getY());
+        setVisible(true);
+
+        Buttons Restaurant = new Buttons("Restaurant", 500, 400);
+        s.add(Restaurant);
+        Restaurant.setLocation(getX(), getY());
+        setVisible(true);
+
+        Buttons Factory = new Buttons("Factory", 600, 400);
+        s.add(Factory);
+        Factory.setLocation(getX(), getY());
+        setVisible(true);
+
+        Buttons Conglomerate = new Buttons("Conglomerate", 700, 400);
+        s.add(Conglomerate);
+        Conglomerate.setLocation(getX(), getY());
+        setVisible(true);
+
+        Buttons TacoTown = new Buttons("Taco Town", 800, 400);
+        s.add(TacoTown);
+        TacoTown.setLocation(getX(), getY());
+        setVisible(true);
+
+        Buttons PlanetTaco = new Buttons("Planet Taco", 300, 700);
+        s.add(PlanetTaco);
+        PlanetTaco.setLocation(getX(), getY());
         setVisible(true);
     }
     public void actiontest(){
