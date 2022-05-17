@@ -257,3 +257,22 @@ public class Player {
     }
 
 }
+
+/*
+    REFERENCE BUY LINES TO COPY/PASTE
+
+
+p.buy(new StreetStand(p.getCost(0)));
+
+p.buy(new TacoShop(p.getCost(1)));
+
+p.buy(new Restaurant(p.getCost(2)));
+
+p.buy(new Factory(p.getCost(3)));
+
+p.buy(new Conglomerate(p.getCost(4)));
+
+p.buy(new TacoTown(p.getCost(5)));
+
+p.buy(new PlanetTaco(p.getCost(6)));
+ */
