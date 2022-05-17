@@ -25,7 +25,8 @@ public class Frame extends JFrame{
 
         s = new Panel(w, h);
         add(s);
-
+        s.add(taconum);
+        taconum.setVisible(true);
         Icon taco = new ImageIcon("Tacoimage.jpg");
         JButton tacoClicker = new JButton(taco);
         tacoClicker.addActionListener(e -> actiontest());
@@ -72,12 +73,11 @@ public class Frame extends JFrame{
         PlanetTaco.setVisible(true);
 
 
-        s.add(taconum);
-        taconum.setVisible(true);
+
         setVisible(true);
 
     }
-    public void tacoCountUpdate(int i){
+    public void tacoCountUpdate(Long i){
         taconum.setText("Number of Tacos: " + i);
     }
     public void actiontest(){
