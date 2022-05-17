@@ -14,12 +14,15 @@ public class Player {
     private int[] producerCosts;
     private boolean[] upgrades;
 
+    Player thisPlayer;
+
     public Player() {                                                                             //constructor
         tacoCount = 0;
         producers = new ArrayList<Producer>();
         producerCounts = new int[] {0, 0, 0, 0, 0, 0, 0};
         producerCosts = new int[] {20, 120, 800, 5000, 25000, 200000, 1000000};
         upgrades = new boolean[] {false, false, false, false, false, false, false, false, false};
+        thisPlayer = this;
     }
 
     public long getTacoCount() {
