@@ -1,8 +1,8 @@
 import java.util.TimerTask;
 
-public class TPSTimer extends TimerTask {
+public class TPSTask extends TimerTask {
     Player player1;
-    public TPSTimer(Player player){
+    public TPSTask(Player player){
         super();
         player1 = player;
     }

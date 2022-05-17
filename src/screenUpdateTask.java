@@ -1,9 +1,9 @@
 /*
 import java.util.TimerTask;
 
-public class screenUpdateTimer extends TimerTask {
+public class screenUpdateTask extends TimerTask {
     Panel panel1;
-    screenUpdateTimer(Player panel){
+    screenUpdateTask(Panel panel){
         super();
         //panel1 = panel;
     }
