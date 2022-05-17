@@ -34,12 +34,12 @@ public class Buttons extends JButton{
     }
     public void actiontest(){
         if (name.equals("Street Stand")) {
-            //Player.thisPlayer.buy(new StreetStand(Player.thisPlayer.getCost(0)));
+            Player.thisPlayer.buy(new StreetStand(Player.thisPlayer.getCost(0)));
             System.out.println("Street Stand bought");
             changeName(Player.thisPlayer.getProducerAmount(0));
         }
         else if(name.equals("Taco Shop")){
-            //Player.thisPlayer.buy(new TacoShop(Player.thisPlayer.getCost(1)));
+            Player.thisPlayer.buy(new TacoShop(Player.thisPlayer.getCost(1)));
             System.out.println("Taco Shop bought");
             changeName(Player.thisPlayer.getProducerAmount(1));
         }
