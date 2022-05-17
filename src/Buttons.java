@@ -15,7 +15,7 @@ public class Buttons extends JButton{
         screenButton = new JButton(name);
         setText(name);
         addActionListener(e -> actiontest());
-        setPreferredSize(new Dimension(50, 50));
+        setPreferredSize(new Dimension(100, 100));
         setActionCommand("Yes");
         setVisible(true);
     }

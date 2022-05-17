@@ -11,30 +11,27 @@ public class Frame extends JFrame{
     Panel s;
     private int w = 1000;
     private int h = 1000;
+    private Label taconum = new Label("Number of Tacos: 0");
     public Frame(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(w, h);
         setResizable(false);
         setTitle("Taco Ticker...");
         init();
+
     }
     public void init(){
         setLocationRelativeTo(null);
 
-        setLayout(new GridLayout(1, 1, 0, 0));
-
         s = new Panel(w, h);
         add(s);
-
-        s.setLayout(null);
-        setVisible(true);
-
 
         Icon taco = new ImageIcon("Tacoimage.jpg");
         JButton tacoClicker = new JButton(taco);
         tacoClicker.addActionListener(e -> actiontest());
         tacoClicker.setActionCommand("yes");
         tacoClicker.setPreferredSize(new Dimension(100, 100));
+        tacoClicker.setLocation(0,0);
         s.add(tacoClicker);
         tacoClicker.setVisible(true);
 
@@ -74,6 +71,14 @@ public class Frame extends JFrame{
         PlanetTaco.setLocation(getX(), getY());
         PlanetTaco.setVisible(true);
 
+
+        s.add(taconum);
+        taconum.setVisible(true);
+        setVisible(true);
+
+    }
+    public void tacoCountUpdate(int i){
+        taconum.setText("Number of Tacos: " + i);
     }
     public void actiontest(){
         System.out.println("Working");
