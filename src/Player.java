@@ -14,7 +14,7 @@ public class Player {
     private int[] producerCosts;
     private boolean[] upgrades;
 
-    public Player thisPlayer;
+    public static Player thisPlayer;
 
     public Player() {                                                                             //constructor
         tacoCount = 0;
