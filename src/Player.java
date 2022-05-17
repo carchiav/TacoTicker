@@ -74,7 +74,7 @@ public class Player {
                 "\nUpgrade: Lettuce Land = " + getUpgrade(6) +
                 "\nUpgrade: Bell = " + getUpgrade(7) +
                 "\nUpgrade: Taco Making Gloves = " + getUpgrade(8) );
-    }
+    }//for testing
 
 
     public boolean buy(Producer p) {
@@ -194,7 +194,7 @@ public class Player {
         File saveFile = new File("SaveData.txt");
         try {
             FileWriter writer = new FileWriter("SaveData.txt");
-            writer.write(tacoCount + "|" + "|" + Arrays.toString(producerCounts) +"|" + Arrays.toString(upgrades)+"|");
+            writer.write(tacoCount + "|" + Arrays.toString(producerCounts) +"|" + Arrays.toString(upgrades)+"|");
             writer.close();
         } catch (IOException e) {
             System.out.println("error");
