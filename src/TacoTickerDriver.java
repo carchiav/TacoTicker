@@ -3,12 +3,13 @@ public class TacoTickerDriver {
     public static void main(String[] args){
         Player player1 = new Player();
         player1.loadGame();
+        Frame myFrame = new Frame();
         player1.printPlayerInfo();
-        //gameLoop(player1);
+        gameLoop(player1, myFrame);
     }
-    public static void gameLoop(Player p){
-         //screenUpdateTask screenUpdateTask1 = new screenUpdateTask(panel);
-         //new Timer().schedule(screenUpdateTask1,0,100);
+    public static void gameLoop(Player p, Frame myFrame){
+         screenUpdateTask screenUpdateTask1 = new screenUpdateTask(myFrame);
+         new Timer().schedule(screenUpdateTask1,0,100);
          TPSTask TPSTask1 = new TPSTask(p);
          new Timer().schedule(TPSTask1,0,100);
     }

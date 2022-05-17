@@ -85,6 +85,7 @@ public class Player {
             producers.add(p);
             producerCounts[p.producerIndex()]++;
             producerCosts[p.producerIndex()] = (int)(p.getCost()*1.2);
+            changeName(producerCounts[p.producerIndex()]);
             return true;
         }
     }          //actually useful methods
