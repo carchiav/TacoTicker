@@ -27,6 +27,9 @@ public class Frame extends JFrame{
         s.setLayout(new GridLayout(10,3, 50, 10));
         add(s);
 
+        s.add(new Label(""));
+        s.add(new Label(""));
+        s.add(new Label(""));
 
         // s.add(new Label) is whitespace and/or a placeholder for the upgrade buttons which have not been initialized yet.
         s.add(new Label("Producers:"));
@@ -36,6 +39,8 @@ public class Frame extends JFrame{
 
         s.add(new Label("Upgrades:"));
 
+        s.add(new Label(""));
+        s.add(new Label(""));
 
         Buttons StreetStand = new Buttons("Street Stand");
         s.add(StreetStand);
@@ -44,20 +49,26 @@ public class Frame extends JFrame{
         StreetStand.changeName(Player.thisPlayer.getProducerAmount(0));
 
         s.add(new Label(""));
-        s.add(new Label(""));
+
+        UpgradeButtons Megaphone = new UpgradeButtons("Megaphone");
+        s.add(Megaphone);
+        Megaphone.setVisible(true);
+        Megaphone.changename((Player.thisPlayer.getUpgrade(0)));
 
         Buttons TacoShop = new Buttons("Taco Shop");
         s.add(TacoShop);
-        TacoShop.setLocation(getX(), getY());
         TacoShop.setVisible(true);
         TacoShop.changeName(Player.thisPlayer.getProducerAmount(1));
 
         s.add(new Label(""));
-        s.add(new Label(""));
+
+        UpgradeButtons TortillaPress = new UpgradeButtons("Tortilla Press");
+        s.add(TortillaPress);
+        TortillaPress.setVisible(true);
+        TortillaPress.changename((Player.thisPlayer.getUpgrade(1)));
 
         Buttons Restaurant = new Buttons("Restaurant");
         s.add(Restaurant);
-        Restaurant.setLocation(getX(), getY());
         Restaurant.setVisible(true);
         Restaurant.changeName(Player.thisPlayer.getProducerAmount(2));
 
@@ -70,52 +81,76 @@ public class Frame extends JFrame{
         s.add(tacoClicker);
         tacoClicker.setVisible(true);
 
-        s.add(new Label(""));
+        UpgradeButtons HotSauce = new UpgradeButtons("Hot Sauce");
+        s.add(HotSauce);
+        HotSauce.setVisible(true);
+        HotSauce.changename(Player.thisPlayer.getUpgrade(2));
 
         Buttons Factory = new Buttons("Factory");
         s.add(Factory);
-        Factory.setLocation(getX(), getY());
         Factory.setVisible(true);
         Factory.changeName(Player.thisPlayer.getProducerAmount(3));
 
         s.add(new Label(""));
-        s.add(new Label(""));
+
+        UpgradeButtons AssemblyLine = new UpgradeButtons("Assembly Line");
+        s.add(AssemblyLine);
+        AssemblyLine.setVisible(true);
+        AssemblyLine.changename(Player.thisPlayer.getUpgrade(3));
 
         Buttons Conglomerate = new Buttons("Conglomerate");
         s.add(Conglomerate);
-        Conglomerate.setLocation(getX(), getY());
         Conglomerate.setVisible(true);
         Conglomerate.changeName(Player.thisPlayer.getProducerAmount(4));
 
         s.add(new Label(""));
-        s.add(new Label(""));
+
+        UpgradeButtons Boardroom = new UpgradeButtons("Boardroom");
+        s.add(Boardroom);
+        Boardroom.setVisible(true);
+        Boardroom.changename(Player.thisPlayer.getUpgrade(4));
 
 
         Buttons TacoTown = new Buttons("Taco Town");
         s.add(TacoTown);
-        TacoTown.setLocation(getX(), getY());
         TacoTown.setVisible(true);
         TacoTown.changeName(Player.thisPlayer.getProducerAmount(5));
 
         s.add(new Label(""));
-        s.add(new Label(""));
+
+        UpgradeButtons Constitution = new UpgradeButtons("Constitution");
+        s.add(Constitution);
+        Constitution.setVisible(true);
+        Constitution.changename(Player.thisPlayer.getUpgrade(5));
 
         Buttons PlanetTaco = new Buttons("Planet Taco");
         s.add(PlanetTaco);
-        PlanetTaco.setLocation(getX(), getY());
         PlanetTaco.setVisible(true);
         PlanetTaco.changeName(Player.thisPlayer.getProducerAmount(6));
 
         s.add(new Label(""));
-        s.add(new Label(""));
+
+        UpgradeButtons LettuceLand = new UpgradeButtons("Lettuce Land");
+        s.add(LettuceLand);
+        LettuceLand.setVisible(true);
+        LettuceLand.changename(Player.thisPlayer.getUpgrade(6));
 
         s.add(new Label(""));
         s.add(new Label(""));
-        s.add(new Label(""));
+
+        UpgradeButtons Bell = new UpgradeButtons("Bell");
+        s.add(Bell);
+        Bell.setVisible(true);
+        Bell.changename(Player.thisPlayer.getUpgrade(7));
 
         s.add(new Label(""));
         s.add(new Label(""));
-        s.add(new Label(""));
+
+        UpgradeButtons TacoMakingGloves = new UpgradeButtons("Taco Making Gloves");
+        s.add(TacoMakingGloves);
+        TacoMakingGloves.setVisible(true);
+        TacoMakingGloves.changename(Player.thisPlayer.getUpgrade(8));
+
         s.repaint();
         setVisible(true);
         s.revalidate();
