@@ -28,7 +28,7 @@ public class Frame extends JFrame{
         add(s);
 
 
-        // s.add(new Label is whitespace and/or a placeholder for the upgrade buttons which have not been initialized yet.
+        // s.add(new Label) is whitespace and/or a placeholder for the upgrade buttons which have not been initialized yet.
         s.add(new Label("Producers:"));
 
         s.add(taconum);
@@ -37,7 +37,7 @@ public class Frame extends JFrame{
         s.add(new Label("Upgrades:"));
 
 
-        Buttons StreetStand = new Buttons("Street Stand", 300, 400);
+        Buttons StreetStand = new Buttons("Street Stand");
         s.add(StreetStand);
         StreetStand.setVisible(true);
         System.out.println("Street Stand");
@@ -45,7 +45,7 @@ public class Frame extends JFrame{
         s.add(new Label(""));
         s.add(new Label(""));
 
-        Buttons TacoShop = new Buttons("Taco Shop", 400, 400);
+        Buttons TacoShop = new Buttons("Taco Shop");
         s.add(TacoShop);
         TacoShop.setLocation(getX(), getY());
         TacoShop.setVisible(true);
@@ -53,7 +53,7 @@ public class Frame extends JFrame{
         s.add(new Label(""));
         s.add(new Label(""));
 
-        Buttons Restaurant = new Buttons("Restaurant", 500, 400);
+        Buttons Restaurant = new Buttons("Restaurant");
         s.add(Restaurant);
         Restaurant.setLocation(getX(), getY());
         Restaurant.setVisible(true);
@@ -69,7 +69,7 @@ public class Frame extends JFrame{
 
         s.add(new Label(""));
 
-        Buttons Factory = new Buttons("Factory", 600, 400);
+        Buttons Factory = new Buttons("Factory");
         s.add(Factory);
         Factory.setLocation(getX(), getY());
         Factory.setVisible(true);
@@ -77,7 +77,7 @@ public class Frame extends JFrame{
         s.add(new Label(""));
         s.add(new Label(""));
 
-        Buttons Conglomerate = new Buttons("Conglomerate", 700, 400);
+        Buttons Conglomerate = new Buttons("Conglomerate");
         s.add(Conglomerate);
         Conglomerate.setLocation(getX(), getY());
         Conglomerate.setVisible(true);
@@ -85,7 +85,7 @@ public class Frame extends JFrame{
         s.add(new Label(""));
         s.add(new Label(""));
 
-        Buttons TacoTown = new Buttons("Taco Town", 800, 400);
+        Buttons TacoTown = new Buttons("Taco Town");
         s.add(TacoTown);
         TacoTown.setLocation(getX(), getY());
         TacoTown.setVisible(true);
@@ -93,7 +93,7 @@ public class Frame extends JFrame{
         s.add(new Label(""));
         s.add(new Label(""));
 
-        Buttons PlanetTaco = new Buttons("Planet Taco", 300, 700);
+        Buttons PlanetTaco = new Buttons("Planet Taco");
         s.add(PlanetTaco);
         PlanetTaco.setLocation(getX(), getY());
         PlanetTaco.setVisible(true);
@@ -109,7 +109,7 @@ public class Frame extends JFrame{
         s.add(new Label(""));
         s.add(new Label(""));
         s.add(new Label(""));
-
+        s.repaint();
         setVisible(true);
 
     }
