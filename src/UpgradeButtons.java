@@ -34,7 +34,7 @@ public class UpgradeButtons extends JButton{
         }
         if(name.equals("Tortilla Press")) {
             if (!Player.thisPlayer.getUpgrade(1)) {
-                if (Player.thisPlayer.buyMegaphone()) {
+                if (Player.thisPlayer.buyTortillaPress()) {
                     System.out.println(name + " Bought");
                     changename(true);
                 }
@@ -48,7 +48,7 @@ public class UpgradeButtons extends JButton{
         }
         if(name.equals("Hot Sauce")) {
             if (!Player.thisPlayer.getUpgrade(2)) {
-                if (Player.thisPlayer.buyMegaphone()) {
+                if (Player.thisPlayer.buyHotSauce()) {
                     System.out.println(name + " Bought");
                     changename(true);
                 }
@@ -62,7 +62,7 @@ public class UpgradeButtons extends JButton{
         }
         if(name.equals("Assembly Line")) {
             if (!Player.thisPlayer.getUpgrade(3)) {
-                if (Player.thisPlayer.buyMegaphone()) {
+                if (Player.thisPlayer.buyAssemblyLine()) {
                     System.out.println(name + " Bought");
                     changename(true);
                 }
@@ -76,7 +76,7 @@ public class UpgradeButtons extends JButton{
         }
         if(name.equals("Boardroom")) {
             if (!Player.thisPlayer.getUpgrade(4)) {
-                if (Player.thisPlayer.buyMegaphone()) {
+                if (Player.thisPlayer.buyBoardroom()) {
                     System.out.println(name + " Bought");
                     changename(true);
                 }
@@ -90,7 +90,7 @@ public class UpgradeButtons extends JButton{
         }
         if(name.equals("Constitution")) {
             if (!Player.thisPlayer.getUpgrade(5)) {
-                if (Player.thisPlayer.buyMegaphone()) {
+                if (Player.thisPlayer.buyConstitution()) {
                     System.out.println(name + " Bought");
                     changename(true);
                 }
@@ -104,7 +104,7 @@ public class UpgradeButtons extends JButton{
         }
         if(name.equals("Lettuce Land")) {
             if (!Player.thisPlayer.getUpgrade(6)) {
-                if (Player.thisPlayer.buyMegaphone()) {
+                if (Player.thisPlayer.buyLettuceLand()) {
                     System.out.println(name + " Bought");
                     changename(true);
                 }
@@ -118,7 +118,7 @@ public class UpgradeButtons extends JButton{
         }
         if(name.equals("Bell")) {
             if (!Player.thisPlayer.getUpgrade(7)) {
-                if (Player.thisPlayer.buyMegaphone()) {
+                if (Player.thisPlayer.buyBell()) {
                     System.out.println(name + " Bought");
                     changename(true);
                 }
@@ -132,7 +132,7 @@ public class UpgradeButtons extends JButton{
         }
         if(name.equals("Taco Making Gloves")) {
             if (!Player.thisPlayer.getUpgrade(8)) {
-                if (Player.thisPlayer.buyMegaphone()) {
+                if (Player.thisPlayer.buyTacoMakingGloves()) {
                     System.out.println(name + " Bought");
                     changename(true);
                 }
