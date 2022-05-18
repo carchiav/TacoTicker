@@ -27,6 +27,9 @@ public class Frame extends JFrame{
         s.setLayout(new GridLayout(10,3, 50, 10));
         add(s);
 
+        s.add(new Label(""));
+        s.add(new Label(""));
+        s.add(new Label(""));
 
         // s.add(new Label) is whitespace and/or a placeholder for the upgrade buttons which have not been initialized yet.
         s.add(new Label("Producers:"));
@@ -36,6 +39,8 @@ public class Frame extends JFrame{
 
         s.add(new Label("Upgrades:"));
 
+        s.add(new Label(""));
+        s.add(new Label(""));
 
         Buttons StreetStand = new Buttons("Street Stand");
         s.add(StreetStand);
