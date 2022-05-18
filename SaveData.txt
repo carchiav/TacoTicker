@@ -1,1 +1,1 @@
-32627371|[40, 20, 25, 28, 22, 20, 23]|[false, false, false, false, false, false, false, false, false]|
+12784000024|[0, 0, 0, 0, 0, 94000, 0]|[false, false, true, false, false, false, true, false, false]|
