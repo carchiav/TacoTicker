@@ -3,7 +3,6 @@ public class TacoTickerDriver {
     public static void main(String[] args){
         Player player1 = new Player();
         player1.loadGame();
-        player1.addTacos(10000);
         Frame myFrame = new Frame();
         player1.printPlayerInfo();
         gameLoop(player1, myFrame);

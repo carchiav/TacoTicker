@@ -13,9 +13,9 @@ public class Buttons extends JButton{
         this.x = x;
         this.y = y;
         screenButton = new JButton(name);
-        setText(name);
+        setText(name + ": ");
         addActionListener(e -> actiontest());
-        setPreferredSize(new Dimension(400, 400));
+        setPreferredSize(new Dimension(100, 100));
         setActionCommand("Yes");
         setVisible(true);
 
@@ -30,7 +30,7 @@ public class Buttons extends JButton{
         return y;
     }
     public void changeName(int i){
-        setText(name + " number bought: " + i);
+        setText(name + ": " + i);
     }
     public void actiontest(){
         if (name.equals("Street Stand")) {

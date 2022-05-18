@@ -24,48 +24,74 @@ public class Frame extends JFrame{
         setLocationRelativeTo(null);
 
         s = new Panel(w, h);
+        s.setLayout(new GridLayout(10,3, 50, 10));
         add(s);
+
+
+        // s.add(new Label is whitespace and/or a placeholder for the upgrade buttons which have not been initialized yet.
+        s.add(new Label("Producers:"));
+
         s.add(taconum);
         taconum.setVisible(true);
-        Icon taco = new ImageIcon("Tacoimage.jpg");
-        JButton tacoClicker = new JButton(taco);
-        tacoClicker.addActionListener(e -> actiontest());
-        tacoClicker.setActionCommand("yes");
-        tacoClicker.setPreferredSize(new Dimension(100, 100));
-        tacoClicker.setLocation(0,0);
-        s.add(tacoClicker);
-        tacoClicker.setVisible(true);
+
+        s.add(new Label("Upgrades:"));
+
 
         Buttons StreetStand = new Buttons("Street Stand", 300, 400);
         s.add(StreetStand);
-        StreetStand.setLocation(StreetStand.getX(), StreetStand.getY());
         StreetStand.setVisible(true);
         System.out.println("Street Stand");
+
+        s.add(new Label(""));
+        s.add(new Label(""));
 
         Buttons TacoShop = new Buttons("Taco Shop", 400, 400);
         s.add(TacoShop);
         TacoShop.setLocation(getX(), getY());
         TacoShop.setVisible(true);
 
+        s.add(new Label(""));
+        s.add(new Label(""));
+
         Buttons Restaurant = new Buttons("Restaurant", 500, 400);
         s.add(Restaurant);
         Restaurant.setLocation(getX(), getY());
         Restaurant.setVisible(true);
+
+        //Adds taco in the middle
+        Icon taco = new ImageIcon("Tacoimage.jpg");
+        JButton tacoClicker = new JButton(taco);
+        tacoClicker.addActionListener(e -> actiontest());
+        tacoClicker.setActionCommand("yes");
+        tacoClicker.setPreferredSize(new Dimension(100, 100));
+        s.add(tacoClicker);
+        tacoClicker.setVisible(true);
+
+        s.add(new Label(""));
 
         Buttons Factory = new Buttons("Factory", 600, 400);
         s.add(Factory);
         Factory.setLocation(getX(), getY());
         Factory.setVisible(true);
 
+        s.add(new Label(""));
+        s.add(new Label(""));
+
         Buttons Conglomerate = new Buttons("Conglomerate", 700, 400);
         s.add(Conglomerate);
         Conglomerate.setLocation(getX(), getY());
         Conglomerate.setVisible(true);
 
+        s.add(new Label(""));
+        s.add(new Label(""));
+
         Buttons TacoTown = new Buttons("Taco Town", 800, 400);
         s.add(TacoTown);
         TacoTown.setLocation(getX(), getY());
         TacoTown.setVisible(true);
+
+        s.add(new Label(""));
+        s.add(new Label(""));
 
         Buttons PlanetTaco = new Buttons("Planet Taco", 300, 700);
         s.add(PlanetTaco);
@@ -73,6 +99,16 @@ public class Frame extends JFrame{
         PlanetTaco.setVisible(true);
 
 
+        s.add(new Label(""));
+        s.add(new Label(""));
+
+        s.add(new Label(""));
+        s.add(new Label(""));
+        s.add(new Label(""));
+
+        s.add(new Label(""));
+        s.add(new Label(""));
+        s.add(new Label(""));
 
         setVisible(true);
 
@@ -81,7 +117,7 @@ public class Frame extends JFrame{
         taconum.setText("Number of Tacos: " + i);
     }
     public void actiontest(){
-        System.out.println("Working");
+        Player.thisPlayer.addTacos(Player.thisPlayer.getTacosPerTick());
     }
     public static void main(String[] args){
 
