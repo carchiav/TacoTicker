@@ -12,6 +12,7 @@ public class Frame extends JFrame{
     private int w = 1000;
     private int h = 1000;
     private Label taconum = new Label("Number of Tacos: 0");
+    private Label TPSindicator = new Label("TPS: 0");
     public Frame(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(w, h);
@@ -54,7 +55,8 @@ public class Frame extends JFrame{
         TacoShop.setVisible(true);
         TacoShop.changeName(Player.thisPlayer.getProducerAmount(1));
 
-        s.add(new Label(""));
+        s.add(TPSindicator);
+        TPSindicator.setVisible(true);
 
         UpgradeButtons TortillaPress = new UpgradeButtons("Tortilla Press");
         s.add(TortillaPress);
@@ -153,6 +155,9 @@ public class Frame extends JFrame{
     }
     public void tacoCountUpdate(Long i){
         taconum.setText("Number of Tacos: "+ String.format( "%,d\n", i ));
+    }
+    public void TPSUpdate(Long j){
+        TPSindicator.setText("TPS: " + String.format("%,d/n", j));
     }
     public void actiontest(){
         Player.thisPlayer.addTacos(Player.thisPlayer.getTacosPerTick());
