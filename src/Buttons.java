@@ -5,13 +5,11 @@ import java.beans.ConstructorProperties;
 public class Buttons extends JButton{
     private JButton screenButton;
     private String name;
-
     public Buttons(String name){
         this.name = name;
         screenButton = new JButton(name);
         setText(name + ": ");
         addActionListener(e -> actiontest());
-        //setPreferredSize(new Dimension(100, 100));
         setActionCommand("Yes");
         setVisible(true);
 
