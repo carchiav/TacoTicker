@@ -95,6 +95,7 @@ public class Frame extends JFrame{
         s.add(new Label(""));
         s.add(new Label(""));
 
+
         Buttons TacoTown = new Buttons("Taco Town");
         s.add(TacoTown);
         TacoTown.setLocation(getX(), getY());
