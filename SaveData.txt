@@ -1,1 +1,1 @@
-16544000024|[0, 0, 0, 0, 0, 94000, 0]|[false, false, true, false, false, false, false, false, false]|
+45614402945|[3, 10, 0, 0, 0, 2000, 10000]|[false, false, false, false, false, false, true, true, true]|

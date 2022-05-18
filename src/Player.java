@@ -243,7 +243,7 @@ public class Player {
                                 currComma = nextComma+1;
                             }
                         }
-                        upgrades[6] = Boolean.parseBoolean(upTemp.substring(currComma, upTemp.length() - 1).replaceAll("\\s", ""));
+                        upgrades[8] = Boolean.parseBoolean((upTemp.substring(currComma, upTemp.length() - 1)).replaceAll("\\s", ""));
 
                     }
                     currMarker = nextMarker+1;
@@ -258,10 +258,7 @@ public class Player {
             producers = new ArrayList<Producer>();
 
         }
-        //Initialize all upgrades from save:
-        /*for (int i = 0; i<upgrades.length;i++){
 
-        }*/
         //Initialize all Producers from Save:
         for (int i = 0; i<7;i++) {
             for (int j = 0; j < producerCounts[i]; j++) {
