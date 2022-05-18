@@ -88,11 +88,11 @@ public class Player {
             return true;
         }
     }          //actually useful methods
-    public int calcTPS() {
-        int total = 0;
+    public long calcTPS() {
+        long total = 0;
         for (Producer p : producers) {
             if (upgrades[p.producerIndex()])
-                total += 2 * p.getTPS();
+                total += 2L * p.getTPS();
             else
                 total += p.getTPS();
         }
@@ -100,7 +100,7 @@ public class Player {
             total = 2 * total;
         return total;
     }
-    public void addTacos(int i) {
+    public void addTacos(long i) {
         tacoCount += i;
     }
 
@@ -168,7 +168,7 @@ public class Player {
         }
     }
     public boolean buyBell() {
-        int bellCost = 10000 + 600*calcTPS();
+        long bellCost = 10000 + 600*calcTPS();
         if (tacoCount < bellCost)
             return false;
         else {
@@ -178,7 +178,7 @@ public class Player {
         }
     }
     public boolean buyTacoMakingGloves() {
-        int glovesCost = 1000 + 300*calcTPS();
+        long glovesCost = 1000 + 300*calcTPS();
         if (tacoCount < glovesCost)
             return false;
         else {
