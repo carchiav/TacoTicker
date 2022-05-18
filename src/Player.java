@@ -88,11 +88,11 @@ public class Player {
             return true;
         }
     }          //actually useful methods
-    public int calcTPS() {
-        int total = 0;
+    public long calcTPS() {
+        long total = 0;
         for (Producer p : producers) {
             if (upgrades[p.producerIndex()])
-                total += 2 * p.getTPS();
+                total += 2L * p.getTPS();
             else
                 total += p.getTPS();
         }
@@ -100,7 +100,7 @@ public class Player {
             total = 2 * total;
         return total;
     }
-    public void addTacos(int i) {
+    public void addTacos(long i) {
         tacoCount += i;
     }
 
@@ -168,7 +168,7 @@ public class Player {
         }
     }
     public boolean buyBell() {
-        int bellCost = 10000 + 600*calcTPS();
+        long bellCost = 10000 + 600*calcTPS();
         if (tacoCount < bellCost)
             return false;
         else {
@@ -178,7 +178,7 @@ public class Player {
         }
     }
     public boolean buyTacoMakingGloves() {
-        int glovesCost = 1000 + 300*calcTPS();
+        long glovesCost = 1000 + 300*calcTPS();
         if (tacoCount < glovesCost)
             return false;
         else {
@@ -256,6 +256,43 @@ public class Player {
             upgrades = new boolean[9];
             producers = new ArrayList<Producer>();
 
+        }
+        //Initialize all upgrades from save:
+        /*for (int i = 0; i<upgrades.length;i++){
+
+        }*/
+        //Initialize all Producers from Save:
+        for (int i = 0; i<7;i++) {
+            for (int j = 0; j < producerCounts[i]; j++) {
+                if (i == 0) {
+                    producers.add(new StreetStand(getCost(0)));
+                    producerCosts[0] = (int)(getCost(0)*1.2);
+                }
+                if (i == 1)  {
+                    producers.add(new TacoShop(getCost(1)));
+                    producerCosts[1] = (int)(getCost(1)*1.2);
+                }
+                if (i == 2)  {
+                    producers.add(new Restaurant(getCost(2)));
+                    producerCosts[2] = (int)(getCost(2)*1.2);
+                }
+                if (i == 3)  {
+                    producers.add(new Factory(getCost(3)));
+                    producerCosts[3] = (int)(getCost(3)*1.2);
+                }
+                if (i == 4)  {
+                    producers.add(new Conglomerate(getCost(4)));
+                    producerCosts[4] = (int)(getCost(4)*1.2);
+                }
+                if (i == 5)  {
+                    producers.add(new TacoTown(getCost(5)));
+                    producerCosts[5] = (int)(getCost(5)*1.2);
+                }
+                if (i == 6)  {
+                    producers.add(new PlanetTaco(getCost(6)));
+                    producerCosts[6] = (int)(getCost(6)*1.2);
+                }
+            }
         }
     }
 

@@ -24,68 +24,108 @@ public class Frame extends JFrame{
         setLocationRelativeTo(null);
 
         s = new Panel(w, h);
+        s.setLayout(new GridLayout(10,3, 50, 10));
         add(s);
+
+
+        // s.add(new Label) is whitespace and/or a placeholder for the upgrade buttons which have not been initialized yet.
+        s.add(new Label("Producers:"));
+
         s.add(taconum);
         taconum.setVisible(true);
+
+        s.add(new Label("Upgrades:"));
+
+
+        Buttons StreetStand = new Buttons("Street Stand");
+        s.add(StreetStand);
+        StreetStand.setVisible(true);
+        System.out.println("Street Stand");
+        StreetStand.changeName(Player.thisPlayer.getProducerAmount(0));
+
+        s.add(new Label(""));
+        s.add(new Label(""));
+
+        Buttons TacoShop = new Buttons("Taco Shop");
+        s.add(TacoShop);
+        TacoShop.setLocation(getX(), getY());
+        TacoShop.setVisible(true);
+        TacoShop.changeName(Player.thisPlayer.getProducerAmount(1));
+
+        s.add(new Label(""));
+        s.add(new Label(""));
+
+        Buttons Restaurant = new Buttons("Restaurant");
+        s.add(Restaurant);
+        Restaurant.setLocation(getX(), getY());
+        Restaurant.setVisible(true);
+        Restaurant.changeName(Player.thisPlayer.getProducerAmount(2));
+
+        //Adds taco in the middle
         Icon taco = new ImageIcon("Tacoimage.jpg");
         JButton tacoClicker = new JButton(taco);
         tacoClicker.addActionListener(e -> actiontest());
         tacoClicker.setActionCommand("yes");
         tacoClicker.setPreferredSize(new Dimension(100, 100));
-        tacoClicker.setLocation(0,0);
         s.add(tacoClicker);
         tacoClicker.setVisible(true);
 
-        Buttons StreetStand = new Buttons("Street Stand", 300, 400);
-        s.add(StreetStand);
-        StreetStand.setLocation(StreetStand.getX(), StreetStand.getY());
-        StreetStand.setVisible(true);
-        System.out.println("Street Stand");
+        s.add(new Label(""));
 
-        Buttons TacoShop = new Buttons("Taco Shop", 400, 400);
-        s.add(TacoShop);
-        TacoShop.setLocation(getX(), getY());
-        TacoShop.setVisible(true);
-
-        Buttons Restaurant = new Buttons("Restaurant", 500, 400);
-        s.add(Restaurant);
-        Restaurant.setLocation(getX(), getY());
-        Restaurant.setVisible(true);
-
-        Buttons Factory = new Buttons("Factory", 600, 400);
+        Buttons Factory = new Buttons("Factory");
         s.add(Factory);
         Factory.setLocation(getX(), getY());
         Factory.setVisible(true);
+        Factory.changeName(Player.thisPlayer.getProducerAmount(3));
 
-        Buttons Conglomerate = new Buttons("Conglomerate", 700, 400);
+        s.add(new Label(""));
+        s.add(new Label(""));
+
+        Buttons Conglomerate = new Buttons("Conglomerate");
         s.add(Conglomerate);
         Conglomerate.setLocation(getX(), getY());
         Conglomerate.setVisible(true);
+        Conglomerate.changeName(Player.thisPlayer.getProducerAmount(4));
 
-        Buttons TacoTown = new Buttons("Taco Town", 800, 400);
+        s.add(new Label(""));
+        s.add(new Label(""));
+
+        Buttons TacoTown = new Buttons("Taco Town");
         s.add(TacoTown);
         TacoTown.setLocation(getX(), getY());
         TacoTown.setVisible(true);
+        TacoTown.changeName(Player.thisPlayer.getProducerAmount(5));
 
-        Buttons PlanetTaco = new Buttons("Planet Taco", 300, 700);
+        s.add(new Label(""));
+        s.add(new Label(""));
+
+        Buttons PlanetTaco = new Buttons("Planet Taco");
         s.add(PlanetTaco);
         PlanetTaco.setLocation(getX(), getY());
         PlanetTaco.setVisible(true);
+        PlanetTaco.changeName(Player.thisPlayer.getProducerAmount(6));
 
+        s.add(new Label(""));
+        s.add(new Label(""));
 
+        s.add(new Label(""));
+        s.add(new Label(""));
+        s.add(new Label(""));
 
+        s.add(new Label(""));
+        s.add(new Label(""));
+        s.add(new Label(""));
+        s.repaint();
         setVisible(true);
+        s.revalidate();
+        s.repaint();
 
     }
     public void tacoCountUpdate(Long i){
-        taconum.setText("Number of Tacos: " + i);
+        taconum.setText("Number of Tacos: "+ String.format( "%,d\n", i ));
     }
     public void actiontest(){
-        System.out.println("Working");
+        Player.thisPlayer.addTacos(Player.thisPlayer.getTacosPerTick());
     }
-    public static void main(String[] args){
 
-        Frame test = new Frame();
-
-    }
 }
