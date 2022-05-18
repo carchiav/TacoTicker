@@ -41,6 +41,7 @@ public class Player {
         if (upgrades[8])
             return (int)(calcTPS()*0.05);
         else
+
             return 1;
     }
 
