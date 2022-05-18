@@ -9,5 +9,6 @@ public class TPSTask extends TimerTask {
     @Override
     public void run() {
         player1.addTacos(player1.calcTPS());
+        player1.saveGame();
     }
 }

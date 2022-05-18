@@ -41,6 +41,7 @@ public class Frame extends JFrame{
         s.add(StreetStand);
         StreetStand.setVisible(true);
         System.out.println("Street Stand");
+        StreetStand.changeName(Player.thisPlayer.getProducerAmount(0));
 
         s.add(new Label(""));
         s.add(new Label(""));
@@ -49,6 +50,7 @@ public class Frame extends JFrame{
         s.add(TacoShop);
         TacoShop.setLocation(getX(), getY());
         TacoShop.setVisible(true);
+        TacoShop.changeName(Player.thisPlayer.getProducerAmount(1));
 
         s.add(new Label(""));
         s.add(new Label(""));
@@ -57,6 +59,7 @@ public class Frame extends JFrame{
         s.add(Restaurant);
         Restaurant.setLocation(getX(), getY());
         Restaurant.setVisible(true);
+        Restaurant.changeName(Player.thisPlayer.getProducerAmount(2));
 
         //Adds taco in the middle
         Icon taco = new ImageIcon("Tacoimage.jpg");
@@ -73,6 +76,7 @@ public class Frame extends JFrame{
         s.add(Factory);
         Factory.setLocation(getX(), getY());
         Factory.setVisible(true);
+        Factory.changeName(Player.thisPlayer.getProducerAmount(3));
 
         s.add(new Label(""));
         s.add(new Label(""));
@@ -81,6 +85,7 @@ public class Frame extends JFrame{
         s.add(Conglomerate);
         Conglomerate.setLocation(getX(), getY());
         Conglomerate.setVisible(true);
+        Conglomerate.changeName(Player.thisPlayer.getProducerAmount(4));
 
         s.add(new Label(""));
         s.add(new Label(""));
@@ -89,6 +94,7 @@ public class Frame extends JFrame{
         s.add(TacoTown);
         TacoTown.setLocation(getX(), getY());
         TacoTown.setVisible(true);
+        TacoTown.changeName(Player.thisPlayer.getProducerAmount(5));
 
         s.add(new Label(""));
         s.add(new Label(""));
@@ -97,7 +103,7 @@ public class Frame extends JFrame{
         s.add(PlanetTaco);
         PlanetTaco.setLocation(getX(), getY());
         PlanetTaco.setVisible(true);
-
+        PlanetTaco.changeName(Player.thisPlayer.getProducerAmount(6));
 
         s.add(new Label(""));
         s.add(new Label(""));
@@ -111,17 +117,15 @@ public class Frame extends JFrame{
         s.add(new Label(""));
 
         setVisible(true);
+        s.revalidate();
+        s.repaint();
 
     }
     public void tacoCountUpdate(Long i){
-        taconum.setText("Number of Tacos: " + i);
+        taconum.setText("Number of Tacos: "+ String.format( "%,d\n", i ));
     }
     public void actiontest(){
         Player.thisPlayer.addTacos(Player.thisPlayer.getTacosPerTick());
     }
-    public static void main(String[] args){
 
-        Frame test = new Frame();
-
-    }
 }
