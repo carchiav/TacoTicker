@@ -1,1 +1,1 @@
-50487239|[11, 1, 14, 8, 6, 3, 22]|[false, false, false, false, false, false, false, false, false]|
+32627371|[40, 20, 25, 28, 22, 20, 23]|[false, false, false, false, false, false, false, false, false]|
