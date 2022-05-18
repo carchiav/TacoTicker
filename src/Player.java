@@ -16,7 +16,8 @@ public class Player {
 
     public static Player thisPlayer;
 
-    public Player() {                                                                             //constructor
+                                                                            //constructor
+    public Player() {
         tacoCount = 0;
         producers = new ArrayList<Producer>();
         producerCounts = new int[] {0, 0, 0, 0, 0, 0, 0};
@@ -25,9 +26,10 @@ public class Player {
         thisPlayer = this;
     }
 
+                                                                            //getters
     public long getTacoCount() {
         return tacoCount;
-    }                   //getters
+    }
     public int getCost(int i) {
         return producerCosts[i];
     }
@@ -41,14 +43,16 @@ public class Player {
         if (upgrades[8])
             return (int)(calcTPS()*0.05);
         else
+
             return 1;
     }
 
+                                                                            //methods for testing
     public void printProducerCounts() {
         System.out.println("");
         for (int i : producerCounts)
             System.out.print(i + ", ");
-    }                   //methods for testing
+    }
     public void iterateTPS() {
         addTacos(calcTPS());
     }
@@ -74,9 +78,9 @@ public class Player {
                 "\nUpgrade: Lettuce Land = " + getUpgrade(6) +
                 "\nUpgrade: Bell = " + getUpgrade(7) +
                 "\nUpgrade: Taco Making Gloves = " + getUpgrade(8) );
-    }//for testing
+    }
 
-
+                                                                            //useful logic methods
     public boolean buy(Producer p) {
         if (tacoCount < p.getCost())
             return false;
@@ -87,7 +91,7 @@ public class Player {
             producerCosts[p.producerIndex()] = (int)(p.getCost()*1.2);
             return true;
         }
-    }          //actually useful methods
+    }
     public long calcTPS() {
         long total = 0;
         for (Producer p : producers) {
@@ -104,6 +108,7 @@ public class Player {
         tacoCount += i;
     }
 
+                                                                            //upgrade buy methods
     public boolean buyMegaphone() {
         if (tacoCount < 200)
             return false;
@@ -112,7 +117,7 @@ public class Player {
             upgrades[0] = true;
             return true;
         }
-    }          //upgrade buy methods
+    }
     public boolean buyTortillaPress() {
         if (tacoCount < 1000)
             return false;
@@ -189,7 +194,7 @@ public class Player {
     }
 
 
-
+                                                                            //save and load methods
     public void saveGame() {
         File saveFile = new File("SaveData.txt");
         try {
@@ -199,7 +204,7 @@ public class Player {
         } catch (IOException e) {
             System.out.println("error");
         }
-    }  //dont touch these
+    }
     public void loadGame(){
         try {
             File save = new File("saveData.txt");
