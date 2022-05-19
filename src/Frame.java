@@ -59,7 +59,7 @@ public class Frame extends JFrame{
         UpgradeButtons TortillaPress = new UpgradeButtons("Tortilla Press");
         s.add(TortillaPress);
         TortillaPress.setVisible(true);
-        TortillaPress.changename(Player.thisPlayer.getUpgrade(1),1000);
+        TortillaPress.changename(Player.thisPlayer.getUpgrade(1),1600);
 
         ProducerButtons Restaurant = new ProducerButtons("Restaurant");
         s.add(Restaurant);
@@ -78,7 +78,7 @@ public class Frame extends JFrame{
         UpgradeButtons HotSauce = new UpgradeButtons("Hot Sauce");
         s.add(HotSauce);
         HotSauce.setVisible(true);
-        HotSauce.changename(Player.thisPlayer.getUpgrade(2),10000);
+        HotSauce.changename(Player.thisPlayer.getUpgrade(2),18000);
 
         ProducerButtons Factory = new ProducerButtons("Factory");
         s.add(Factory);
@@ -91,7 +91,7 @@ public class Frame extends JFrame{
         UpgradeButtons AssemblyLine = new UpgradeButtons("Assembly Line");
         s.add(AssemblyLine);
         AssemblyLine.setVisible(true);
-        AssemblyLine.changename(Player.thisPlayer.getUpgrade(3),75000);
+        AssemblyLine.changename(Player.thisPlayer.getUpgrade(3),200000);
 
         ProducerButtons Conglomerate = new ProducerButtons("Conglomerate");
         s.add(Conglomerate);
@@ -103,7 +103,7 @@ public class Frame extends JFrame{
         UpgradeButtons Boardroom = new UpgradeButtons("Boardroom");
         s.add(Boardroom);
         Boardroom.setVisible(true);
-        Boardroom.changename(Player.thisPlayer.getUpgrade(4),500000);
+        Boardroom.changename(Player.thisPlayer.getUpgrade(4),1200000);
 
 
         ProducerButtons TacoTown = new ProducerButtons("Taco Town");
@@ -116,7 +116,7 @@ public class Frame extends JFrame{
         UpgradeButtons Constitution = new UpgradeButtons("Constitution");
         s.add(Constitution);
         Constitution.setVisible(true);
-        Constitution.changename(Player.thisPlayer.getUpgrade(5),10000000);
+        Constitution.changename(Player.thisPlayer.getUpgrade(5),15000000);
 
         ProducerButtons PlanetTaco = new ProducerButtons("Planet Taco");
         s.add(PlanetTaco);
@@ -128,7 +128,7 @@ public class Frame extends JFrame{
         UpgradeButtons LettuceLand = new UpgradeButtons("Lettuce Land");
         s.add(LettuceLand);
         LettuceLand.setVisible(true);
-        LettuceLand.changename(Player.thisPlayer.getUpgrade(6),200000000);
+        LettuceLand.changename(Player.thisPlayer.getUpgrade(6),300000000);
 
         s.add(new Label(""));
         s.add(new Label(""));
@@ -136,7 +136,7 @@ public class Frame extends JFrame{
         UpgradeButtons Bell = new UpgradeButtons("Bell");
         s.add(Bell);
         Bell.setVisible(true);
-        Bell.changename(Player.thisPlayer.getUpgrade(7),10000 + 400*Player.thisPlayer.calcTPS());
+        Bell.changename(Player.thisPlayer.getUpgrade(7),10000 + 300*Player.thisPlayer.calcTPS());
 
         s.add(new Label(""));
         s.add(new Label(""));
@@ -144,7 +144,7 @@ public class Frame extends JFrame{
         UpgradeButtons TacoMakingGloves = new UpgradeButtons("Taco Making Gloves");
         s.add(TacoMakingGloves);
         TacoMakingGloves.setVisible(true);
-        TacoMakingGloves.changename(Player.thisPlayer.getUpgrade(8),1000 + 10*Player.thisPlayer.calcTPS());
+        TacoMakingGloves.changename(Player.thisPlayer.getUpgrade(8),1000 + 100*Player.thisPlayer.calcTPS());
 
         s.repaint();
         setVisible(true);
@@ -155,8 +155,8 @@ public class Frame extends JFrame{
         TimerTask upgradeTask = new TimerTask(){
             @Override
             public void run() {
-                Bell.changename(Player.thisPlayer.getUpgrade(7),100000 + 400*Player.thisPlayer.calcTPS());
-                TacoMakingGloves.changename(Player.thisPlayer.getUpgrade(8),10000 + 10*Player.thisPlayer.calcTPS());
+                Bell.changename(Player.thisPlayer.getUpgrade(7),100000 + 300*Player.thisPlayer.calcTPS());
+                TacoMakingGloves.changename(Player.thisPlayer.getUpgrade(8),10000 + 100*Player.thisPlayer.calcTPS());
             }
         };
         new Timer().schedule(upgradeTask,0,2000);

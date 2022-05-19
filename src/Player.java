@@ -21,7 +21,7 @@ public class Player {
         tacoCount = 0;
         producers = new ArrayList<Producer>();
         producerCounts = new int[] {0, 0, 0, 0, 0, 0, 0};
-        producerCosts = new int[] {20, 120, 800, 5000, 25000, 200000, 1000000};
+        producerCosts = new int[] {25, 180, 1500, 10000, 85000, 1000000, 10000000};
         upgrades = new boolean[] {false, false, false, false, false, false, false, false, false};
         thisPlayer = this;
     }
@@ -119,61 +119,61 @@ public class Player {
         }
     }
     public boolean buyTortillaPress() {
-        if (tacoCount < 1000)
+        if (tacoCount < 1600)
             return false;
         else {
-            tacoCount -= 1000;
+            tacoCount -= 1600;
             upgrades[1] = true;
             return true;
         }
     }
     public boolean buyHotSauce() {
-        if (tacoCount < 10000)
+        if (tacoCount < 18000)
             return false;
         else {
-            tacoCount -= 10000;
+            tacoCount -= 18000;
             upgrades[2] = true;
             return true;
         }
     }
     public boolean buyAssemblyLine() {
-        if (tacoCount < 75000)
+        if (tacoCount < 200000)
             return false;
         else {
-            tacoCount -= 75000;
+            tacoCount -= 200000;
             upgrades[3] = true;
             return true;
         }
     }
     public boolean buyBoardroom() {
-        if (tacoCount < 500000)
+        if (tacoCount < 1200000)
             return false;
         else {
-            tacoCount -= 500000;
+            tacoCount -= 1200000;
             upgrades[4] = true;
             return true;
         }
     }
     public boolean buyConstitution() {
-        if (tacoCount < 10000000)
+        if (tacoCount < 15000000)
             return false;
         else {
-            tacoCount -= 10000000;
+            tacoCount -= 15000000;
             upgrades[5] = true;
             return true;
         }
     }
     public boolean buyLettuceLand() {
-        if (tacoCount < 200000000)
+        if (tacoCount < 300000000)
             return false;
         else {
-            tacoCount -= 200000000;
+            tacoCount -= 300000000;
             upgrades[6] = true;
             return true;
         }
     }
     public boolean buyBell() {
-        long bellCost =(100000 + 400*calcTPS());
+        long bellCost =(100000 + 300*calcTPS());
         if (tacoCount < bellCost)
             return false;
         else {
@@ -183,7 +183,7 @@ public class Player {
         }
     }
     public boolean buyTacoMakingGloves() {
-        long glovesCost = 10000 + 10*calcTPS();
+        long glovesCost = 10000 + 100*calcTPS();
         if (tacoCount < glovesCost)
             return false;
         else {
