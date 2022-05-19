@@ -183,7 +183,7 @@ public class Player {
         }
     }
     public boolean buyTacoMakingGloves() {
-        long glovesCost = 10000 + 10*calcTPS();
+        long glovesCost = 10000 + 10*calcTPS(); //Change this here too
         if (tacoCount < glovesCost)
             return false;
         else {
