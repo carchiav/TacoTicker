@@ -173,7 +173,7 @@ public class Player {
         }
     }
     public boolean buyBell() {
-        long bellCost = 10000 + 600*calcTPS();
+        long bellCost =(100000 + 400*calcTPS());
         if (tacoCount < bellCost)
             return false;
         else {
@@ -183,7 +183,7 @@ public class Player {
         }
     }
     public boolean buyTacoMakingGloves() {
-        long glovesCost = 1000 + 300*calcTPS();
+        long glovesCost = 10000 + 10*calcTPS();
         if (tacoCount < glovesCost)
             return false;
         else {
@@ -255,7 +255,8 @@ public class Player {
                 }
             }
         }
-        catch(FileNotFoundException e){
+        catch(Exception e){
+            System.out.println(e);
             tacoCount = 0;
             producerCounts = new int[7];
             upgrades = new boolean[9];

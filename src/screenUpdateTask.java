@@ -14,5 +14,6 @@ public class screenUpdateTask extends TimerTask {
         myFrame.tacoCountUpdate(player1.getTacoCount());
         myFrame.TPSUpdate(player1.calcTPS());
         myFrame.TPTUpdate(player1.getTacosPerTick());
+
     }
 }
