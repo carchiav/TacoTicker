@@ -5,8 +5,8 @@ import java.util.Timer;
 
 public class Frame extends JFrame{
     Panel s;
-    private int w = 2400;
-    private int h = 1300;
+    private int w = 1900;
+    private int h = 1000;
     private Label taconum = new Label("Number of Tacos: 0");
     private Label TPSindicator = new Label("TPS: 0");
     private Label TPTindicator = new Label("Tacos Per Tick: 1");
