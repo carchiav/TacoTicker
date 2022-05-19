@@ -179,33 +179,33 @@ public class Frame extends JFrame{
                 else
                     Restaurant.changeName(Player.thisPlayer.getProducerAmount(2),Player.thisPlayer.getCost(2), RestaurantClass.thisTPS);
 
-                if (Player.thisPlayer.getUpgrade(1) && Player.thisPlayer.getUpgrade(7))
-                    Factory.changeName(Player.thisPlayer.getProducerAmount(1),Player.thisPlayer.getCost(1), FactoryClass.thisTPS*4);
-                else if (Player.thisPlayer.getUpgrade(1))
-                    Factory.changeName(Player.thisPlayer.getProducerAmount(1),Player.thisPlayer.getCost(1), FactoryClass.thisTPS*2);
+                if (Player.thisPlayer.getUpgrade(3) && Player.thisPlayer.getUpgrade(7))
+                    Factory.changeName(Player.thisPlayer.getProducerAmount(3),Player.thisPlayer.getCost(3), FactoryClass.thisTPS*4);
+                else if (Player.thisPlayer.getUpgrade(3))
+                    Factory.changeName(Player.thisPlayer.getProducerAmount(3),Player.thisPlayer.getCost(3), FactoryClass.thisTPS*2);
                 else
-                    Factory.changeName(Player.thisPlayer.getProducerAmount(1),Player.thisPlayer.getCost(1), FactoryClass.thisTPS);
+                    Factory.changeName(Player.thisPlayer.getProducerAmount(3),Player.thisPlayer.getCost(3), FactoryClass.thisTPS);
 
-                if (Player.thisPlayer.getUpgrade(1) && Player.thisPlayer.getUpgrade(7))
-                    Conglomerate.changeName(Player.thisPlayer.getProducerAmount(1),Player.thisPlayer.getCost(1), ConglomerateClass.thisTPS*4);
-                else if (Player.thisPlayer.getUpgrade(1))
-                    Conglomerate.changeName(Player.thisPlayer.getProducerAmount(1),Player.thisPlayer.getCost(1), ConglomerateClass.thisTPS*2);
+                if (Player.thisPlayer.getUpgrade(4) && Player.thisPlayer.getUpgrade(7))
+                    Conglomerate.changeName(Player.thisPlayer.getProducerAmount(4),Player.thisPlayer.getCost(4), ConglomerateClass.thisTPS*4);
+                else if (Player.thisPlayer.getUpgrade(4))
+                    Conglomerate.changeName(Player.thisPlayer.getProducerAmount(4),Player.thisPlayer.getCost(1), ConglomerateClass.thisTPS*2);
                 else
-                    Conglomerate.changeName(Player.thisPlayer.getProducerAmount(1),Player.thisPlayer.getCost(1), ConglomerateClass.thisTPS);
+                    Conglomerate.changeName(Player.thisPlayer.getProducerAmount(4),Player.thisPlayer.getCost(4), ConglomerateClass.thisTPS);
 
-                if (Player.thisPlayer.getUpgrade(1) && Player.thisPlayer.getUpgrade(7))
-                    TacoTown.changeName(Player.thisPlayer.getProducerAmount(1),Player.thisPlayer.getCost(1), TacoTownClass.thisTPS*4);
-                else if (Player.thisPlayer.getUpgrade(1))
-                    TacoTown.changeName(Player.thisPlayer.getProducerAmount(1),Player.thisPlayer.getCost(1), TacoTownClass.thisTPS*2);
+                if (Player.thisPlayer.getUpgrade(5) && Player.thisPlayer.getUpgrade(7))
+                    TacoTown.changeName(Player.thisPlayer.getProducerAmount(5),Player.thisPlayer.getCost(5), TacoTownClass.thisTPS*4);
+                else if (Player.thisPlayer.getUpgrade(5))
+                    TacoTown.changeName(Player.thisPlayer.getProducerAmount(5),Player.thisPlayer.getCost(5), TacoTownClass.thisTPS*2);
                 else
-                    TacoTown.changeName(Player.thisPlayer.getProducerAmount(1),Player.thisPlayer.getCost(1), TacoTownClass.thisTPS);
+                    TacoTown.changeName(Player.thisPlayer.getProducerAmount(5),Player.thisPlayer.getCost(5), TacoTownClass.thisTPS);
 
-                if (Player.thisPlayer.getUpgrade(1) && Player.thisPlayer.getUpgrade(7))
-                    PlanetTaco.changeName(Player.thisPlayer.getProducerAmount(1),Player.thisPlayer.getCost(1), PlanetTacoClass.thisTPS*4);
-                else if (Player.thisPlayer.getUpgrade(1))
-                    PlanetTaco.changeName(Player.thisPlayer.getProducerAmount(1),Player.thisPlayer.getCost(1), PlanetTacoClass.thisTPS*2);
+                if (Player.thisPlayer.getUpgrade(6) && Player.thisPlayer.getUpgrade(7))
+                    PlanetTaco.changeName(Player.thisPlayer.getProducerAmount(6),Player.thisPlayer.getCost(6), PlanetTacoClass.thisTPS*4);
+                else if (Player.thisPlayer.getUpgrade(6))
+                    PlanetTaco.changeName(Player.thisPlayer.getProducerAmount(6),Player.thisPlayer.getCost(6), PlanetTacoClass.thisTPS*2);
                 else
-                    PlanetTaco.changeName(Player.thisPlayer.getProducerAmount(1),Player.thisPlayer.getCost(1), PlanetTacoClass.thisTPS);
+                    PlanetTaco.changeName(Player.thisPlayer.getProducerAmount(6),Player.thisPlayer.getCost(6), PlanetTacoClass.thisTPS);
             }
         };
         new Timer().schedule(labelTask,0,1000);
