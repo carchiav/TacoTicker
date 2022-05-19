@@ -1,4 +1,3 @@
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -268,31 +267,31 @@ public class Player {
         for (int i = 0; i<7;i++) {
             for (int j = 0; j < producerCounts[i]; j++) {
                 if (i == 0) {
-                    producers.add(new StreetStand(getCost(0)));
+                    producers.add(new StreetStandClass(getCost(0)));
                     producerCosts[0] = (int)(getCost(0)*1.2);
                 }
                 if (i == 1)  {
-                    producers.add(new TacoShop(getCost(1)));
+                    producers.add(new TacoShopClass(getCost(1)));
                     producerCosts[1] = (int)(getCost(1)*1.2);
                 }
                 if (i == 2)  {
-                    producers.add(new Restaurant(getCost(2)));
+                    producers.add(new RestaurantClass(getCost(2)));
                     producerCosts[2] = (int)(getCost(2)*1.2);
                 }
                 if (i == 3)  {
-                    producers.add(new Factory(getCost(3)));
+                    producers.add(new FactoryClass(getCost(3)));
                     producerCosts[3] = (int)(getCost(3)*1.2);
                 }
                 if (i == 4)  {
-                    producers.add(new Conglomerate(getCost(4)));
+                    producers.add(new ConglomerateClass(getCost(4)));
                     producerCosts[4] = (int)(getCost(4)*1.2);
                 }
                 if (i == 5)  {
-                    producers.add(new TacoTown(getCost(5)));
+                    producers.add(new TacoTownClass(getCost(5)));
                     producerCosts[5] = (int)(getCost(5)*1.2);
                 }
                 if (i == 6)  {
-                    producers.add(new PlanetTaco(getCost(6)));
+                    producers.add(new PlanetTacoClass(getCost(6)));
                     producerCosts[6] = (int)(getCost(6)*1.2);
                 }
             }
