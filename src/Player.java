@@ -142,31 +142,31 @@ public class Player {
             achievements[6] = true;
             return "Bring Me To Your Tortilla: Buy a Planet Taco";
         }
-        if (producerCounts[0] != 100 && !achievements[7]) {
+        if (producerCounts[0] >= 100 && !achievements[7]) {
             achievements[7] = true;
             return "Return Customer: Buy 100 Street Stands";
         }
-        if (producerCounts[1] != 100 && !achievements[8]) {
+        if (producerCounts[1] >= 100 && !achievements[8]) {
             achievements[8] = true;
             return "Average Taco Enjoyer: Buy 100 Taco Shops";
         }
-        if (producerCounts[2] != 100 && !achievements[9]) {
+        if (producerCounts[2] >= 100 && !achievements[9]) {
             achievements[9] = true;
             return "I'll have my usual, please: Buy 100 Restaurants";
         }
-        if (producerCounts[3] != 100 && !achievements[10]) {
+        if (producerCounts[3] >= 100 && !achievements[10]) {
             achievements[10] = true;
             return "Economies of Scale: Buy 100 Factories";
         }
-        if (producerCounts[4] != 100 && !achievements[11]) {
+        if (producerCounts[4] >= 100 && !achievements[11]) {
             achievements[11] = true;
             return "Elon: Buy 100 Conglomerates";
         }
-        if (producerCounts[5] != 100 && !achievements[12]) {
+        if (producerCounts[5] >= 100 && !achievements[12]) {
             achievements[12] = true;
             return "Did you know that the name of this producer was inspired by an SNL sketch with Bill Hader and Andy Samberg?: Buy 100 Taco Towns";
         }
-        if (producerCounts[6] != 100 && !achievements[13]) {
+        if (producerCounts[6] >= 100 && !achievements[13]) {
             achievements[13] = true;
             return "I actually don't believe that you got this upgrade legitimately: Buy 100 Planet Tacos";
         }
