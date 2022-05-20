@@ -12,6 +12,8 @@ public class Player {
     private int[] producerCounts;
     private int[] producerCosts;
     private boolean[] upgrades;
+    private boolean[] achievements;
+    private int totalTicks;
 
     public static Player thisPlayer;
 
@@ -22,6 +24,10 @@ public class Player {
         producerCounts = new int[] {0, 0, 0, 0, 0, 0, 0};
         producerCosts = new int[] {25, 180, 1500, 10000, 85000, 1000000, 10000000};
         upgrades = new boolean[] {false, false, false, false, false, false, false, false, false};
+        achievements = new boolean[18];
+        for (int i = 0 ; i < achievements.length ; i++)
+            achievements[i] = false;
+        totalTicks = 0;
         thisPlayer = this;
     }
 
@@ -39,6 +45,7 @@ public class Player {
         return upgrades[i];
     }
     public int getTacosPerTick() {
+        totalTicks++;
         if (upgrades[8])
             return (int)(calcTPS()*0.05);
         else
@@ -106,7 +113,96 @@ public class Player {
     public void addTacos(long i) {
         tacoCount += i;
     }
-
+    public String achievementsCheck() {
+        if (producerCounts[0] != 0 && !achievements[0]) {
+            achievements[0] = true;
+            return "Welcome to TacoTicker: Buy a Street Stand";
+        }
+        if (producerCounts[1] != 0 && !achievements[1]) {
+            achievements[1] = true;
+            return "Ramping up Production: Buy a Taco Shop";
+        }
+        if (producerCounts[2] != 0 && !achievements[2]) {
+            achievements[2] = true;
+            return "Franchiser: Buy a Restaurant";
+        }
+        if (producerCounts[3] != 0 && !achievements[3]) {
+            achievements[3] = true;
+            return "Industrial Revolution: Buy a Factory";
+        }
+        if (producerCounts[4] != 0 && !achievements[4]) {
+            achievements[4] = true;
+            return "Horizon-taco-l Integration: Buy a Conglomerate";
+        }
+        if (producerCounts[5] != 0 && !achievements[5]) {
+            achievements[5] = true;
+            return "Won't You Take Me: Buy a Taco Town";
+        }
+        if (producerCounts[6] != 0 && !achievements[6]) {
+            achievements[6] = true;
+            return "Bring Me To Your Tortilla: Buy a Planet Taco";
+        }
+        if (producerCounts[0] != 100 && !achievements[7]) {
+            achievements[7] = true;
+            return "Return Customer: Buy 100 Street Stands";
+        }
+        if (producerCounts[1] != 100 && !achievements[8]) {
+            achievements[8] = true;
+            return "Average Taco Enjoyer: Buy 100 Taco Shops";
+        }
+        if (producerCounts[2] != 100 && !achievements[9]) {
+            achievements[9] = true;
+            return "I'll have my usual, please: Buy 100 Restaurants";
+        }
+        if (producerCounts[3] != 100 && !achievements[10]) {
+            achievements[10] = true;
+            return "Economies of Scale: Buy 100 Factories";
+        }
+        if (producerCounts[4] != 100 && !achievements[11]) {
+            achievements[11] = true;
+            return "Elon: Buy 100 Conglomerates";
+        }
+        if (producerCounts[5] != 100 && !achievements[12]) {
+            achievements[12] = true;
+            return "Did you know that the name of this producer was inspired by an SNL sketch with Bill Hader and Andy Samberg?: Buy 100 Taco Towns";
+        }
+        if (producerCounts[6] != 100 && !achievements[13]) {
+            achievements[13] = true;
+            return "I actually don't believe that you got this upgrade legitimately: Buy 100 Planet Tacos";
+        }
+        if (totalTicks >= 1000 && !achievements[14]) {
+            achievements[14] = true;
+            return "Carpal Tunnel: Click 1000 times";
+        }
+        if (!achievements[15]) {
+            boolean failCondition = false;
+            for (int i = 0 ; i < upgrades.length ; i++)
+                if (!upgrades[i])
+                    failCondition = true;
+            if (!failCondition) {
+                achievements[15] = true;
+                return "Buy every upgrade";
+            }
+        }
+        if (!achievements[16]) {
+            boolean failCondition = false;
+            for (int i = 0 ; i < producerCounts.length ; i++)
+                if (producerCounts[i] == 0)
+                    failCondition = true;
+            for (int i = 0 ; i < upgrades.length ; i++)
+                if (!upgrades[i])
+                    failCondition = true;
+            if (!failCondition) {
+                achievements[16] = true;
+                return "Buy EVERYTHING";
+            }
+        }
+        if (!achievements[17] && tacoCount == 69696969) {
+            achievements[17] = true;
+            return "Nice";
+        }
+        return null;
+    }
                                                                             //upgrade buy methods
     public boolean buyMegaphone() {
         if (tacoCount < 200)
