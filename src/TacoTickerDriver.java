@@ -4,7 +4,6 @@ public class TacoTickerDriver {
         Player player1 = new Player();
         player1.loadGame();
         Frame myFrame = new Frame();
-        player1.printPlayerInfo();
         gameLoop(player1, myFrame);
     }
     public static void gameLoop(Player p, Frame myFrame){

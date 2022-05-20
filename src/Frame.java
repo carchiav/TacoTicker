@@ -222,6 +222,7 @@ public class Frame extends JFrame{
     }
     public void actiontest(){
         Player.thisPlayer.addTacos(Player.thisPlayer.getTacosPerTick());
+        Player.thisPlayer.addToTotalTicks();
     }
 
 }
