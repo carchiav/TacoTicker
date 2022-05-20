@@ -1,6 +1,6 @@
 public class ConglomerateClass extends Producer {
     static int thisTPS = 1200;
-    public ConglomerateClass(int c) {
+    public ConglomerateClass(long c) {
         super(c, 1200);
     }
 

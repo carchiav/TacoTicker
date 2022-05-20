@@ -1,8 +1,8 @@
 public class Producer {
-    private int cost;
+    private long cost;
     private int TPS;
 
-    public Producer(int cost, int TPS) {
+    public Producer(long cost, int TPS) {
         this.cost = cost;
         this.TPS = TPS;
     }
@@ -11,7 +11,7 @@ public class Producer {
         return TPS;
     }
 
-    public int getCost() {
+    public long getCost() {
         return cost;
     }
 

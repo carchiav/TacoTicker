@@ -10,7 +10,7 @@ public class Player {
     private long tacoCount;
     private ArrayList<Producer> producers;
     private int[] producerCounts;
-    private int[] producerCosts;
+    private long[] producerCosts;
     private boolean[] upgrades;
     private boolean[] achievements;
     private int totalTicks;
@@ -22,7 +22,7 @@ public class Player {
         tacoCount = 0;
         producers = new ArrayList<Producer>();
         producerCounts = new int[] {0, 0, 0, 0, 0, 0, 0};
-        producerCosts = new int[] {25, 180, 1500, 10000, 85000, 1000000, 10000000};
+        producerCosts = new long[] {25, 180, 1500, 10000, 85000, 1000000, 10000000};
         upgrades = new boolean[] {false, false, false, false, false, false, false, false, false};
         achievements = new boolean[18];
         for (int i = 0 ; i < achievements.length ; i++)
@@ -35,7 +35,7 @@ public class Player {
     public long getTacoCount() {
         return tacoCount;
     }
-    public int getCost(int i) {
+    public long getCost(int i) {
         return producerCosts[i];
     }
     public int getProducerAmount(int i)  {

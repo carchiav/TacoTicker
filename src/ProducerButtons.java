@@ -12,7 +12,7 @@ public class ProducerButtons extends JButton{
         setVisible(true);
 
     }
-    public void changeName(int i, int price, int TPS){
+    public void changeName(int i, long price, int TPS){
         setText(name + ": " + i+"\n"+" Price: "+String.format( "%,d\n",price)+" TPS: "+String.format( "%,d\n",TPS));
     }
     public void actiontest(){

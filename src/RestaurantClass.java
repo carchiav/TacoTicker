@@ -1,6 +1,6 @@
 public class RestaurantClass extends Producer {
     static int thisTPS = 40;
-    public RestaurantClass(int c) {
+    public RestaurantClass(long c) {
         super(c, 40);
     }
 

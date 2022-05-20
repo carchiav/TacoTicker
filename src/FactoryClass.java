@@ -1,6 +1,6 @@
 public class FactoryClass extends Producer {
     static int thisTPS = 200;
-    public FactoryClass(int c) {
+    public FactoryClass(long c) {
         super(c, 200);
     }
 

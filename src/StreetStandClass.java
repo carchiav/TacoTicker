@@ -1,7 +1,7 @@
 public class StreetStandClass extends Producer {
     static int thisTPS = 1;
 
-    public StreetStandClass(int c) {
+    public StreetStandClass(long c) {
         super(c, 1);
     }
 

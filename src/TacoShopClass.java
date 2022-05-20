@@ -1,6 +1,6 @@
 public class TacoShopClass extends Producer {
     static int thisTPS = 5;
-    public TacoShopClass(int c) {
+    public TacoShopClass(long c) {
         super(c, 5);
     }
 
