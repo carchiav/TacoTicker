@@ -22,6 +22,8 @@ public class Frame extends JFrame{
     public void init(){
         setLocationRelativeTo(null);
 
+        ProducerButtons[] ProducerButtonsList = new ProducerButtons[7];
+
         s = new Panel(w, h);
         s.setLayout(new GridLayout(10,3, 50, 10));
         add(s);
@@ -35,7 +37,8 @@ public class Frame extends JFrame{
         s.add(new Label("Upgrades:"));
 
 
-        ProducerButtons StreetStand = new ProducerButtons("Street Stand");
+        ProducerButtons StreetStand = new ProducerButtons("Street Stand",1);
+        ProducerButtonsList[0] = StreetStand;
         s.add(StreetStand);
         StreetStand.setVisible(true);
         System.out.println("Street Stand");
@@ -48,7 +51,8 @@ public class Frame extends JFrame{
         Megaphone.setVisible(true);
         Megaphone.changename((Player.thisPlayer.getUpgrade(0)),200);
 
-        ProducerButtons TacoShop = new ProducerButtons("Taco Shop");
+        ProducerButtons TacoShop = new ProducerButtons("Taco Shop",5);
+        ProducerButtonsList[1] = TacoShop;
         s.add(TacoShop);
         TacoShop.setVisible(true);
         TacoShop.changeName(Player.thisPlayer.getProducerAmount(1),Player.thisPlayer.getCost(1),5);
@@ -61,7 +65,8 @@ public class Frame extends JFrame{
         TortillaPress.setVisible(true);
         TortillaPress.changename(Player.thisPlayer.getUpgrade(1),1600);
 
-        ProducerButtons Restaurant = new ProducerButtons("Restaurant");
+        ProducerButtons Restaurant = new ProducerButtons("Restaurant",40);
+        ProducerButtonsList[2] = Restaurant;
         s.add(Restaurant);
         Restaurant.setVisible(true);
         Restaurant.changeName(Player.thisPlayer.getProducerAmount(2),Player.thisPlayer.getCost(2),40);
@@ -80,7 +85,8 @@ public class Frame extends JFrame{
         HotSauce.setVisible(true);
         HotSauce.changename(Player.thisPlayer.getUpgrade(2),18000);
 
-        ProducerButtons Factory = new ProducerButtons("Factory");
+        ProducerButtons Factory = new ProducerButtons("Factory",200);
+        ProducerButtonsList[3] = Factory;
         s.add(Factory);
         Factory.setVisible(true);
         Factory.changeName(Player.thisPlayer.getProducerAmount(3),Player.thisPlayer.getCost(3),200);
@@ -93,7 +99,8 @@ public class Frame extends JFrame{
         AssemblyLine.setVisible(true);
         AssemblyLine.changename(Player.thisPlayer.getUpgrade(3),200000);
 
-        ProducerButtons Conglomerate = new ProducerButtons("Conglomerate");
+        ProducerButtons Conglomerate = new ProducerButtons("Conglomerate",1200);
+        ProducerButtonsList[4] = Conglomerate;
         s.add(Conglomerate);
         Conglomerate.setVisible(true);
         Conglomerate.changeName(Player.thisPlayer.getProducerAmount(4),Player.thisPlayer.getCost(4),1200);
@@ -106,7 +113,8 @@ public class Frame extends JFrame{
         Boardroom.changename(Player.thisPlayer.getUpgrade(4),1200000);
 
 
-        ProducerButtons TacoTown = new ProducerButtons("Taco Town");
+        ProducerButtons TacoTown = new ProducerButtons("Taco Town",8000);
+        ProducerButtonsList[5] = TacoTown;
         s.add(TacoTown);
         TacoTown.setVisible(true);
         TacoTown.changeName(Player.thisPlayer.getProducerAmount(5),Player.thisPlayer.getCost(5),8000);
@@ -118,7 +126,8 @@ public class Frame extends JFrame{
         Constitution.setVisible(true);
         Constitution.changename(Player.thisPlayer.getUpgrade(5),15000000);
 
-        ProducerButtons PlanetTaco = new ProducerButtons("Planet Taco");
+        ProducerButtons PlanetTaco = new ProducerButtons("Planet Taco",40000);
+        ProducerButtonsList[6] = PlanetTaco;
         s.add(PlanetTaco);
         PlanetTaco.setVisible(true);
         PlanetTaco.changeName(Player.thisPlayer.getProducerAmount(6),Player.thisPlayer.getCost(6),40000);
@@ -158,57 +167,17 @@ public class Frame extends JFrame{
                 Bell.changename(Player.thisPlayer.getUpgrade(7),100000 + 300*Player.thisPlayer.calcTPS());
                 TacoMakingGloves.changename(Player.thisPlayer.getUpgrade(8),10000 + 100*Player.thisPlayer.calcTPS());
 
-                if (Player.thisPlayer.getUpgrade(0) && Player.thisPlayer.getUpgrade(7))
-                    StreetStand.changeName(Player.thisPlayer.getProducerAmount(0),Player.thisPlayer.getCost(0), StreetStandClass.thisTPS*4);
-                else if (Player.thisPlayer.getUpgrade(0))
-                    StreetStand.changeName(Player.thisPlayer.getProducerAmount(0),Player.thisPlayer.getCost(0), StreetStandClass.thisTPS*2);
-                else
-                    StreetStand.changeName(Player.thisPlayer.getProducerAmount(0),Player.thisPlayer.getCost(0), StreetStandClass.thisTPS);
-
-                if (Player.thisPlayer.getUpgrade(1) && Player.thisPlayer.getUpgrade(7))
-                    TacoShop.changeName(Player.thisPlayer.getProducerAmount(1),Player.thisPlayer.getCost(1), TacoShopClass.thisTPS*4);
-                else if (Player.thisPlayer.getUpgrade(1))
-                    TacoShop.changeName(Player.thisPlayer.getProducerAmount(1),Player.thisPlayer.getCost(1), TacoShopClass.thisTPS*2);
-                else
-                    TacoShop.changeName(Player.thisPlayer.getProducerAmount(1),Player.thisPlayer.getCost(1), TacoShopClass.thisTPS);
-
-                if (Player.thisPlayer.getUpgrade(2) && Player.thisPlayer.getUpgrade(7))
-                    Restaurant.changeName(Player.thisPlayer.getProducerAmount(2),Player.thisPlayer.getCost(2), RestaurantClass.thisTPS*4);
-                else if (Player.thisPlayer.getUpgrade(2))
-                    Restaurant.changeName(Player.thisPlayer.getProducerAmount(2),Player.thisPlayer.getCost(2), RestaurantClass.thisTPS*2);
-                else
-                    Restaurant.changeName(Player.thisPlayer.getProducerAmount(2),Player.thisPlayer.getCost(2), RestaurantClass.thisTPS);
-
-                if (Player.thisPlayer.getUpgrade(3) && Player.thisPlayer.getUpgrade(7))
-                    Factory.changeName(Player.thisPlayer.getProducerAmount(3),Player.thisPlayer.getCost(3), FactoryClass.thisTPS*4);
-                else if (Player.thisPlayer.getUpgrade(3))
-                    Factory.changeName(Player.thisPlayer.getProducerAmount(3),Player.thisPlayer.getCost(3), FactoryClass.thisTPS*2);
-                else
-                    Factory.changeName(Player.thisPlayer.getProducerAmount(3),Player.thisPlayer.getCost(3), FactoryClass.thisTPS);
-
-                if (Player.thisPlayer.getUpgrade(4) && Player.thisPlayer.getUpgrade(7))
-                    Conglomerate.changeName(Player.thisPlayer.getProducerAmount(4),Player.thisPlayer.getCost(4), ConglomerateClass.thisTPS*4);
-                else if (Player.thisPlayer.getUpgrade(4))
-                    Conglomerate.changeName(Player.thisPlayer.getProducerAmount(4),Player.thisPlayer.getCost(1), ConglomerateClass.thisTPS*2);
-                else
-                    Conglomerate.changeName(Player.thisPlayer.getProducerAmount(4),Player.thisPlayer.getCost(4), ConglomerateClass.thisTPS);
-
-                if (Player.thisPlayer.getUpgrade(5) && Player.thisPlayer.getUpgrade(7))
-                    TacoTown.changeName(Player.thisPlayer.getProducerAmount(5),Player.thisPlayer.getCost(5), TacoTownClass.thisTPS*4);
-                else if (Player.thisPlayer.getUpgrade(5))
-                    TacoTown.changeName(Player.thisPlayer.getProducerAmount(5),Player.thisPlayer.getCost(5), TacoTownClass.thisTPS*2);
-                else
-                    TacoTown.changeName(Player.thisPlayer.getProducerAmount(5),Player.thisPlayer.getCost(5), TacoTownClass.thisTPS);
-
-                if (Player.thisPlayer.getUpgrade(6) && Player.thisPlayer.getUpgrade(7))
-                    PlanetTaco.changeName(Player.thisPlayer.getProducerAmount(6),Player.thisPlayer.getCost(6), PlanetTacoClass.thisTPS*4);
-                else if (Player.thisPlayer.getUpgrade(6))
-                    PlanetTaco.changeName(Player.thisPlayer.getProducerAmount(6),Player.thisPlayer.getCost(6), PlanetTacoClass.thisTPS*2);
-                else
-                    PlanetTaco.changeName(Player.thisPlayer.getProducerAmount(6),Player.thisPlayer.getCost(6), PlanetTacoClass.thisTPS);
+                for (int i = 0; i < 7; i++){
+                    if (Player.thisPlayer.getUpgrade(i) && Player.thisPlayer.getUpgrade(7))
+                        ProducerButtonsList[i].changeName(Player.thisPlayer.getProducerAmount(i),Player.thisPlayer.getCost(i), (ProducerButtonsList[i].thisTPS()*4));
+                    else if (Player.thisPlayer.getUpgrade(i)|| Player.thisPlayer.getUpgrade(7))
+                        ProducerButtonsList[i].changeName(Player.thisPlayer.getProducerAmount(i),Player.thisPlayer.getCost(i), (ProducerButtonsList[i].thisTPS()*2));
+                    else
+                        ProducerButtonsList[i].changeName(Player.thisPlayer.getProducerAmount(i),Player.thisPlayer.getCost(i), ProducerButtonsList[i].thisTPS());
+                }
             }
         };
-        new Timer().schedule(labelTask,0,1000);
+        new Timer().schedule(labelTask,0,100);
 
     }
     public void tacoCountUpdate(Long i){
