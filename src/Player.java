@@ -170,7 +170,7 @@ public class Player {
         }
         if (producerCounts[6] >= 100 && !achievements[13]) {
             achievements[13] = true;
-            return "I actually don't believe that you got this upgrade legitimately: Buy 100 Planet Tacos";
+            return "I don't believe that you got this achievement legitimately: Buy 100 Planet Tacos";
         }
         if (totalTicks >= 1000 && !achievements[14]) {
             achievements[14] = true;
@@ -183,7 +183,7 @@ public class Player {
                     failCondition = true;
             if (!failCondition) {
                 achievements[15] = true;
-                return "Buy every upgrade";
+                return "Efficiency Expert: Buy every upgrade";
             }
         }
         if (!achievements[16]) {
@@ -196,12 +196,12 @@ public class Player {
                     failCondition = true;
             if (!failCondition) {
                 achievements[16] = true;
-                return "Buy EVERYTHING";
+                return "Completionist: Buy EVERYTHING";
             }
         }
-        if (!achievements[17] && tacoCount == 69696969) {
+        if (!achievements[17] && tacoCount == 1000000000) {
             achievements[17] = true;
-            return "Nice";
+            return "Nice Round Number: Get exactly 1,000,000,000 tacos";
         }
         return null;
     }
