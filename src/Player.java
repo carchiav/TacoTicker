@@ -44,6 +44,7 @@ public class Player {
     public boolean getUpgrade(int i) {
         return upgrades[i];
     }
+    public boolean getAchievement(int i){ return achievements[i]; }
     public int getTacosPerTick() {
         if (upgrades[8])
             return (int)(calcTPS()*0.05);
