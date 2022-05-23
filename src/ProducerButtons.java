@@ -24,7 +24,7 @@ public class ProducerButtons extends JButton{
         }
         else if(name.equals("Taco Shop")){
             if(Player.thisPlayer.buy(new TacoShopClass(Player.thisPlayer.getCost(1))))
-                System.out.println("Taco Shop bought" +Player.thisPlayer.getCost(1));
+                System.out.println("Taco Shop bought");
             else System.out.println("Not enough tacos!");
 
 
