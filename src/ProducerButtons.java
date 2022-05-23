@@ -3,9 +3,21 @@ import javax.swing.*;
 public class ProducerButtons extends JButton{
     private JButton screenButton;
     private String name;
-    public ProducerButtons(String name){
+    private long TPS;
+    public ProducerButtons(String name, int TPS){
         this.name = name;
         screenButton = new JButton(name);
+        this.TPS = (long)TPS;
+        setText(name + ": ");
+        addActionListener(e -> actiontest());
+        setActionCommand("Yes");
+        setVisible(true);
+
+    }
+    public ProducerButtons(String name, long TPS){
+        this.name = name;
+        screenButton = new JButton(name);
+        this.TPS = TPS;
         setText(name + ": ");
         addActionListener(e -> actiontest());
         setActionCommand("Yes");
@@ -14,6 +26,13 @@ public class ProducerButtons extends JButton{
     }
     public void changeName(int i, long price, int TPS){
         setText(name + ": " + i+"\n"+" Price: "+String.format( "%,d\n",price)+" TPS: "+String.format( "%,d\n",TPS));
+
+    }
+    public void changeName(int i, long price, long TPS){
+        setText(name + ": " + i+"\n"+" Price: "+String.format( "%,d\n",price)+" TPS: "+String.format( "%,d\n",TPS));
+    }
+    public long thisTPS(){
+        return TPS;
     }
     public void actiontest(){
         if (name.equals("Street Stand")) {
@@ -24,7 +43,7 @@ public class ProducerButtons extends JButton{
         }
         else if(name.equals("Taco Shop")){
             if(Player.thisPlayer.buy(new TacoShopClass(Player.thisPlayer.getCost(1))))
-                System.out.println("Taco Shop bought" +Player.thisPlayer.getCost(1));
+                System.out.println("Taco Shop bought");
             else System.out.println("Not enough tacos!");
 
 

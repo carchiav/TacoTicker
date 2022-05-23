@@ -14,7 +14,7 @@ public class UpgradeButtons extends JButton{
             setText(name + ": Purchased");
         }
         else{
-            setText(name+ " Price: "+ cost);
+            setText(name+ " Price: "+ String.format( "%,d\n",cost));
         }
     }
     public void changename(boolean isPurchased, long cost){
@@ -22,7 +22,7 @@ public class UpgradeButtons extends JButton{
             setText(name + ": Purchased");
         }
         else{
-            setText(name+ " Price: "+ cost);
+            setText(name+ " Price: "+ String.format( "%,d\n",cost));
         }
     }
     public void actiontest(){
