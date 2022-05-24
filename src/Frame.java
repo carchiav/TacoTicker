@@ -6,9 +6,9 @@ import java.util.Timer;
 public class Frame extends JFrame{
     Panel s;
     Panel a;
-    private int w = 1500;
+    private int w = 1400;
     private String ack;
-    private int h = 800;
+    private int h = 700;
     private Label[] achievementlist;
     private Label taconum = new Label("Number of Tacos: 0");
     private Label TPSindicator = new Label("TPS: 0");
