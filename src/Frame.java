@@ -6,9 +6,9 @@ import java.util.Timer;
 public class Frame extends JFrame{
     Panel s;
     Panel a;
-    private int w = 1900;
+    private int w = 1500;
     private String ack;
-    private int h = 1000;
+    private int h = 700;
     private Label[] achievementlist;
     private Label taconum = new Label("Number of Tacos: 0");
     private Label TPSindicator = new Label("TPS: 0");
@@ -164,13 +164,10 @@ public class Frame extends JFrame{
         TacoMakingGloves.setVisible(true);
         TacoMakingGloves.changename(Player.thisPlayer.getUpgrade(8),1000 + 100*Player.thisPlayer.calcTPS());
 
-        s.repaint();
+
         s.setVisible(true);
         setVisible(true);
-
         s.revalidate();
-        s.repaint();
-        repaint();
 
         TimerTask labelTask = new TimerTask(){
             @Override
