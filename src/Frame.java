@@ -24,7 +24,7 @@ public class Frame extends JFrame{
     }
     public void init(){
         setLocationRelativeTo(null);
-        ProducerButtons[] ProducerButtonsList = new ProducerButtons[];
+        ProducerButtons[] ProducerButtonsList = new ProducerButtons[7];
         s = new Panel(w, h);
         s.setLayout(new GridLayout(10,3, 50, 10));
         add(s);
@@ -178,12 +178,13 @@ public class Frame extends JFrame{
                         ProducerButtonsList[i].changeName(Player.thisPlayer.getProducerAmount(i),Player.thisPlayer.getCost(i), (ProducerButtonsList[i].thisTPS()*2));
                     else
                         ProducerButtonsList[i].changeName(Player.thisPlayer.getProducerAmount(i),Player.thisPlayer.getCost(i), ProducerButtonsList[i].thisTPS());
-                }}
-
+                }
                 ack = Player.thisPlayer.achievementsCheck();
                 if (ack != null){
                     recentAchivements.setText("Most recent Achievement: " + ack);
                 }
+            }
+
             };
         new Timer().schedule(labelTask,0,1000);
 
