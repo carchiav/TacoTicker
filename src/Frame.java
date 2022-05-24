@@ -39,6 +39,7 @@ public class Frame extends JFrame{
 
 
         ProducerButtons StreetStand = new ProducerButtons("Street Stand",1);
+        ProducerButtonsList[0] = StreetStand;
         s.add(StreetStand);
         StreetStand.setVisible(true);
         System.out.println("Street Stand");
@@ -52,6 +53,7 @@ public class Frame extends JFrame{
         Megaphone.changename((Player.thisPlayer.getUpgrade(0)),200);
 
         ProducerButtons TacoShop = new ProducerButtons("Taco Shop",5);
+        ProducerButtonsList[1] = TacoShop;
         s.add(TacoShop);
         TacoShop.setVisible(true);
         TacoShop.changeName(Player.thisPlayer.getProducerAmount(1),Player.thisPlayer.getCost(1),5);
@@ -65,6 +67,7 @@ public class Frame extends JFrame{
         TortillaPress.changename(Player.thisPlayer.getUpgrade(1),1600);
 
         ProducerButtons Restaurant = new ProducerButtons("Restaurant",40);
+        ProducerButtonsList[2] = Restaurant;
         s.add(Restaurant);
         Restaurant.setVisible(true);
         Restaurant.changeName(Player.thisPlayer.getProducerAmount(2),Player.thisPlayer.getCost(2),40);
@@ -83,6 +86,7 @@ public class Frame extends JFrame{
         HotSauce.changename(Player.thisPlayer.getUpgrade(2),18000);
 
         ProducerButtons Factory = new ProducerButtons("Factory",200);
+        ProducerButtonsList[3] = Factory;
         s.add(Factory);
         Factory.setVisible(true);
         Factory.changeName(Player.thisPlayer.getProducerAmount(3),Player.thisPlayer.getCost(3),200);
@@ -96,6 +100,7 @@ public class Frame extends JFrame{
         AssemblyLine.changename(Player.thisPlayer.getUpgrade(3),200000);
 
         ProducerButtons Conglomerate = new ProducerButtons("Conglomerate",1200);
+        ProducerButtonsList[4] = Conglomerate;
         s.add(Conglomerate);
         Conglomerate.setVisible(true);
         Conglomerate.changeName(Player.thisPlayer.getProducerAmount(4),Player.thisPlayer.getCost(4),1200);
@@ -109,6 +114,7 @@ public class Frame extends JFrame{
 
 
         ProducerButtons TacoTown = new ProducerButtons("Taco Town",8000);
+        ProducerButtonsList[5] = TacoTown;
         s.add(TacoTown);
         TacoTown.setVisible(true);
         TacoTown.changeName(Player.thisPlayer.getProducerAmount(5),Player.thisPlayer.getCost(5),8000);
@@ -121,6 +127,7 @@ public class Frame extends JFrame{
         Constitution.changename(Player.thisPlayer.getUpgrade(5),15000000);
 
         ProducerButtons PlanetTaco = new ProducerButtons("Planet Taco",40000);
+        ProducerButtonsList[6] = PlanetTaco;
         s.add(PlanetTaco);
         PlanetTaco.setVisible(true);
         PlanetTaco.changeName(Player.thisPlayer.getProducerAmount(6),Player.thisPlayer.getCost(6),40000);
@@ -186,7 +193,7 @@ public class Frame extends JFrame{
             }
 
             };
-        new Timer().schedule(labelTask,0,1000);
+        new Timer().schedule(labelTask,0,100);
 
     }
     public void gotoAchievements(){
