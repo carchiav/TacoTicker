@@ -164,13 +164,10 @@ public class Frame extends JFrame{
         TacoMakingGloves.setVisible(true);
         TacoMakingGloves.changename(Player.thisPlayer.getUpgrade(8),1000 + 100*Player.thisPlayer.calcTPS());
 
-        s.repaint();
+
         s.setVisible(true);
         setVisible(true);
-
         s.revalidate();
-        s.repaint();
-        repaint();
 
         TimerTask labelTask = new TimerTask(){
             @Override

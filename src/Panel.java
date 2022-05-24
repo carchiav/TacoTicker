@@ -13,9 +13,6 @@ public class Panel extends JPanel{
     public Panel(int w, int h){
         width = w;
         height = h;
-        repaint();
-    }
-    public void paint(Graphics g){
-       // g.drawImage(image, (width/2)-100, (height/2)-100, 200, 200, null);
+
     }
 }
