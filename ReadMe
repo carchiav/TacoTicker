@@ -1,0 +1,21 @@
+Taco Ticker is an idle/clicker game built around the concept of exponential growth. Run main in TacoTickerDriver to start the game.
+
+Ticking the main taco button gives one taco per tick. Tacos can be spent on producers, which automatically generate tacos, and upgrades, which scale production.
+
+Your TPS (tacos per second) is added to your total Number of Tacos once per second.
+
+Upgrade effects are as follows:
+
+Megaphone: Doubles the TPS of Street Stands
+Tortilla Press: Doubles the TPS of Taco Shops
+Hot Sauce: Doubles the TPS of Restaurants
+Assembly Line: Doubles the TPS of Factories
+Boardroom: Doubles the TPS of Conglomerates
+Constitution: Doubles the TPS of Taco Towns
+Lettuce Land: Doubles the TPS of Planet Tacos
+
+Bell: Doubles ALL TPS
+The cost of this upgrade is equal to 100,000 + 300 x your current TPS, meaning you will always have to wait in order to buy it.
+
+Taco Making Gloves: Permanently scales the number of tacos you gain per tick to 5% of your TPS
+The cost of this upgrade is equal to 10,000 + 100 x your current TPS, meaning you will always have to wait in order to buy it.
