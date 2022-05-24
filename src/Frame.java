@@ -263,7 +263,7 @@ public class Frame extends JFrame{
         a.add(goBack);
         goBack.addActionListener(e-> backScreen());
 
-        Label Testing = new Label("More achievements will appear as you unlock them.");
+        Label Testing = new Label("Achievements will appear when unlocked.");
         a.add (Testing);
         Testing.setVisible(true);
 
