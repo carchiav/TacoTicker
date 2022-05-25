@@ -1,12 +1,13 @@
-
-Taco Ticker is an idle/clicker game built around the concept of exponential growth. Run main in TacoTickerDriver to start the game.
+Taco Ticker is an idle/clicker game built around the concept of exponential growth. Run "main" in TacoTickerDriver to start the game.
 
 Ticking the main taco button gives one taco per tick. Tacos can be spent on producers, which automatically generate tacos, and upgrades, which scale production.
 
 Your TPS (tacos per second) is added to your total Number of Tacos once per second.
 
-Upgrade effects are as follows:
+The game automatically saves your game in SaveData.txt. To start a new game, simply delete this file. A new, blank one will be created automatically.
+If you want to edit save data, the first number is total tacos, the next set is numbers of each producers, and the final set is achievements bought.
 
+Upgrade effects are as follows:
 Megaphone: Doubles the TPS of Street Stands
 Tortilla Press: Doubles the TPS of Taco Shops
 Hot Sauce: Doubles the TPS of Restaurants
@@ -14,9 +15,14 @@ Assembly Line: Doubles the TPS of Factories
 Boardroom: Doubles the TPS of Conglomerates
 Constitution: Doubles the TPS of Taco Towns
 Lettuce Land: Doubles the TPS of Planet Tacos
-
 Bell: Doubles ALL TPS
-The cost of this upgrade is equal to 100,000 + 300 x your current TPS, meaning you will always have to wait in order to buy it.
-
+   The cost of this upgrade is equal to 100,000 + 300 x your current TPS, meaning you will always have to wait in order to buy it.
 Taco Making Gloves: Permanently scales the number of tacos you gain per tick to 5% of your TPS
-The cost of this upgrade is equal to 10,000 + 100 x your current TPS, meaning you will always have to wait in order to buy it.
+   The cost of this upgrade is equal to 10,000 + 100 x your current TPS, meaning you will always have to wait in order to buy it.
+
+Achievements are displayed on the bottom of the screen, and in the separate Achievements menu
+
+Known issues:
+When clicking to buy upgraded buildings above the Restaurant, the displayed TPS momentarily returns to the un-upgraded value.
+SaveData doesn't store achievements, which means that the "Carpal Tunnel" and "Nice Round Number" achievements are not saved.
+   (the other achievements will all be earned again when the game is opened)
