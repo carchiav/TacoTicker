@@ -26,3 +26,10 @@ Known issues:
 When clicking to buy upgraded buildings above the Restaurant, the displayed TPS momentarily returns to the un-upgraded value.
 SaveData doesn't store achievements, which means that the "Carpal Tunnel" and "Nice Round Number" achievements are not saved.
    (the other achievements will all be earned again when the game is opened)
+
+Citations:
+Dhilan: To learn how to implement JFrame, JPanel, and their associated Components, I just looked through the Java Oracle Documentation website and read how the objects and their methods worked.
+https://docs.oracle.com/javase/7/docs/api/ 
+
+Carson: Taco Image (https://www.secem.es/GALEMYS/PDF%20de%20Galemys/18%20(1-2).pdf/015.%20Saez%2053-55.pdf?cid=152&shop=it%27s+raining+tacos+lego+movie&xi=6&xc=22&pr=33.99&you=0)
+
